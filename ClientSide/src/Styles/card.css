@@ -1,0 +1,65 @@
+.user-card-main-container {
+    background-color: white;
+    color: black;
+}
+.user-card-container{
+    width:35%;
+    margin: 0;
+    padding: 20px;
+}
+.user-card-main-container {
+    /* margin: 135px; */
+    padding: 0px;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.car-image{
+    height: 135px;
+    width: 100%;
+}
+
+.capacity{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3px;
+}
+
+.innova{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.color-of-price{
+    color: green;
+    font-weight: bold;
+}
+.bottom-section{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    border: 1px solid #707070;
+    
+    
+}
+.ucard-left-button{
+    width: 50%;
+    height: 50px;
+    background-color: #FFFFFF;
+}
+.ucard-right-button{
+    width: 200%;
+    height: 50px;
+    background-color: blue;
+    color: white;
+
+}
