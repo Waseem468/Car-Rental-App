@@ -34,5 +34,4 @@ const OrderSchema =new mongoose.Schema({
 )
 
 const PlaceOrders = new mongoose.model("placeOrders", OrderSchema)
-
 module.exports = PlaceOrders;
