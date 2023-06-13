@@ -4,3 +4,5 @@ const {AdminLoginMethod,AdminRegisterMethod}=require('../Controller/AdminControl
 
 Router.post('/register',AdminRegisterMethod);
 Router.post('/login',AdminLoginMethod);
+
+module.exports = Router;

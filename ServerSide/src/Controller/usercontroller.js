@@ -1,6 +1,6 @@
 const { hashPassword, comparePassword } = require("../helper/authHelper");
 const jwt = require("jsonwebtoken");
-const userModel = require("../models/userSchema");
+const userModel = require("../Model/userSchema");
 const registerController = async (req, res) => {
   try {
     const { name, email, password } = req.body;
