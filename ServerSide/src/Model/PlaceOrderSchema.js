@@ -33,6 +33,6 @@ const OrderSchema =new mongoose.Schema({
 }, {timestamps: true}
 )
 
-const Orders = new mongoose.model("booking-orders", OrderSchema)
+const PlaceOrders = new mongoose.model("placeOrders", OrderSchema)
 
-module.exports = Orders;
+module.exports = PlaceOrders;
