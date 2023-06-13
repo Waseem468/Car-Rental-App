@@ -1,0 +1,26 @@
+.main-Admin-container{
+    width: 100%;
+}
+
+.sub-main{
+    padding:20px;
+    padding-left: 50px;
+    align-items: left;
+
+}
+.admin-sub-header{
+    display: flex;
+  justify-content: space-between;
+}
+.addcarbtn{
+    margin-right: 20px;
+    background-color:#007FED;
+    width: 90px;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+}
+.Admin{
+    margin-left: 20px;
+
+}
