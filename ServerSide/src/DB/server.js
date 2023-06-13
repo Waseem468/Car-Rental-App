@@ -13,7 +13,5 @@ function connectDB(){
         console.log("Mongodb server is error");
     })
 }
-
 connectDB()
-
 module.exports = mongoose;

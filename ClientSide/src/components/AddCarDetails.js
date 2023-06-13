@@ -11,7 +11,7 @@ const AddCarDetails = () => {
                     <h4>Add Car Details</h4>
 
                 </div>
-                <form className='addcar-form-containor'>
+                <form className='addcar-form-containor' encType='multipart/form-data'>
 
 
                     <div className='Field-containor'>
@@ -130,13 +130,14 @@ const AddCarDetails = () => {
                         />
 
                     </div>
-                    <div className='btn2'>
-                        <button style={{
-                            width: '150px',
-                            height: '35px', borderRadius: '50px', backgroundColor: 'blue'
-                            , color: 'white'
-                        }}>ADD</button>
-                    </div>
+                        <div className='btn2'>
+                            <button style={{
+                                width: '150px',
+                                height: '35px', borderRadius: '50px', backgroundColor: 'blue'
+                                , color: 'white'
+                            }}>ADD</button>
+                        <input type='file' className='car-images' id='car-images' hidden />
+                        </div>
                 </form>
 
             </div>
