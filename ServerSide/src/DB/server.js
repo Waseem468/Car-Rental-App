@@ -1,19 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-function connectDB(){
-    mongoose.connect('mongodb+srv://rk9208033050:Subham2012@cluster0.ep8xa4g.mongodb.net/Rental_Car_App', {useUnifiedTopology: true, useNewUrlParser: true})
+const URL = process.env.DB_URL
+const database = process.env.DATABASE
 
-    const connection = mongoose.connection;
-
-    connection.on('connected', ()=>{
-        console.log("Mongodb server is started sucessfully");
-    })
-
-    connection.on('error', ()=>{
-        console.log("Mongodb server is error");
-    })
-}
-
-connectDB()
-
-module.exports = mongoose;
+mongoose.connect(URL+database)
+.then((res)=>{
+    console.log('connection is successfull')
+}).catch(err=>console.log(err));
