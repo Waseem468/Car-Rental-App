@@ -1,0 +1,66 @@
+.Home-container{
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+.user-Home-page{
+    width: 100vw;
+    height: 89vh;
+    background-image:url("../images/car-rental.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    display: grid;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.user-text-of-the-home-page{
+    font-size: 30px;
+    margin-top: -20px;
+    width: 60%;
+    margin-left: -8px;
+    color: white;
+}
+.user-Register{
+    display: flex;
+    flex-direction: column;
+    padding-top: 250px;
+    padding-bottom: 100px;
+    margin-left: 100px;
+    text-align: left;
+    
+}
+p{
+    font-size: 35px;
+    font-weight: 700;
+    color: azure;
+}
+
+.user-admin{
+    
+    margin-left: 40px;
+    text-align: left;
+
+} 
+.user-signinbutton{
+    display: flex;
+    margin-left: 90px;
+    margin-top: -110px;
+    text-align: center;
+    
+}
+.user-btn-register{
+    height: 30px;
+    width: 100px;
+    border-radius: 3px;
+    font-size: small;
+    font-weight: bold;
+}
+.user-admin{
+    height: 30px;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+}
