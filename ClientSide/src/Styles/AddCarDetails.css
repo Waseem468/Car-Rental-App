@@ -1,0 +1,98 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.addcar-main-containor{
+width: 100%;
+height: 100vh;
+}
+
+.leftSection {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  height: 89vh;
+  /* Should be removed. Only for demonstration */
+  /* background-color: aquamarine; */
+}
+
+.rightSection {
+  float: left;
+  width: 60%;
+  /* padding: 10px; */
+  height: 89vh;
+  /* Should be removed. Only for demonstration */
+  background-color: #fff;
+}
+
+.addcar-form-containor {
+  width: 90%;
+  height: 100%;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 30px auto;
+  margin-top: 10px;
+
+
+}
+
+.Field-containor label {
+  display: block;
+  margin-top: 20px;
+}
+
+.main-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+}
+
+.Field-containor input,
+.Field-containor select {
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.Field-containor select {
+  width: 100%;
+}
+
+.btn {
+  margin-top: 50px;
+}
+
+.form-containor2 {
+  width: 90%;
+  height: 97%;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 30px auto;
+  margin-top: 40px;
+  margin-left: 0px;
+
+}
+
+.btn2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.addcar-heading {
+ margin-left: 15px;
+}
