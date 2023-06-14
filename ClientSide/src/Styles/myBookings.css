@@ -158,12 +158,23 @@ nav div {
 }
 
 .place-the-value {
-    font-weight: bold;
-    padding-left: 3px;
+    /* font-weight: bold;
+    padding-left: 3px; */
+font: normal normal medium 20px/25px Helvetica Neue;
+letter-spacing: 0px;
+color: #121212;
+opacity: 0.84;
+font-size: 10px;
+padding: 7px;
 }
 
 .mybooking-id-date-time {
-    margin: 9px 0px;
+    /* margin: 9px 0px; */
+font: normal normal normal 16px/18px Helvetica Neue;
+letter-spacing: 0px;
+color: #1D1D1D;
+opacity: 0.6;
+font-size: 15px;
 }
 
 #id-of-car {
@@ -172,26 +183,26 @@ nav div {
 
 .fifth-coloumn-of-the-card {
     height: 136px;
-    width: 321px;
+    width: 260px;
     display: flex;
-    padding: 3px;
+    padding: 0px;
     border: 1px solid aliceblue;
 }
 
 .edit-btn-mybooking {
-    height: 60px;
-    width: 182px;
+    height: 57px;
+    width: 80px;
     background-color: blue;
     color: white;
     border-radius: 20px;
-    margin: 37px;
+    margin: 37px 28px 37px 28px;
 }
 
 .cancel-btn-mybooking {
-    height: 58px;
-    width: 162px;
+    height: 57px;
+    width: 174px;
     background-color: white;
     color: blue;
     border-radius: 20px;
-    margin: 41px;
+    margin: 37px 20px 37px 20px;
 }
