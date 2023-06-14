@@ -5,13 +5,13 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const ValidateDbID = require('../Utils/ValidateID');
 const GenrateToken = require('../Utils/GenrateToken');
-const SECRATE_KEY = process.env.SECRATE_KEY
+const SECRET_KEY = process.env.SECRET_KEY
 
 const AdminRegisterMethod = async (req, res) => {
     try {
         let { password, email } = req.body;
         let HashPassword = await bcrypt.hash(password, 10);
-        let userAdmin = await AdminModel.findone({ email });
+        let userAdmin = await AdminModel.findOne({ email });
         if (userAdmin) {
             return res.status(400).json({ status: "Failed", field: "email", message: "Email already exist!!" })
         }
@@ -31,11 +31,11 @@ const AdminRegisterMethod = async (req, res) => {
 
 const AdminLoginMethod = ExpressAsyncHandler(async (req, res) => {
     try {
-        let admin = await AdminModel.findone({ email: req.body.email });
+        let admin = await AdminModel.findOne({ email: req.body.email });
         if (admin) {
             let CompPassword = await bcrypt.compare(req.body.password, admin.password)
             if (CompPassword) {
-                const token = await jwt.sign({ _id: admin._id }, SECRATE_KEY)
+                const token = await jwt.sign({ _id: admin._id }, SECRET_KEY)
                 res.status(200).send({ status: "Successfully login", token: token, name: admin.Name, AdminId: admin._id })
             } else {
                 res.status(400).send({ status: 'Failed', message: 'No data found' })
