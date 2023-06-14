@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Prompt:wght@200&display=swap');
+#bookings-logout-btns{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px 23px; 
+}
+#btn-1{
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 23px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+    
+}
+#btn-2{
+    height: 50px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 23px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+    
+}
+.nav-container{
+    width: 100%;
+}

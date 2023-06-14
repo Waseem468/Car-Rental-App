@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+.edit-booking-main-container{
+    width: 100%;
+}
+
+.left-container {
+    float: left;
+    width: 70%;
+    height: 89vh;
+    padding-top: 20px;
+    background-color: azure;
+    border-radius: 20px;
+    border: 1px solid blanchedalmond;
+    margin-top: 20px;
+    padding-left: 20px;
+   
+}
+h5{
+    text-align: start;
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.first-section{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 10px; */
+}
+.second-section{
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 350px;
+    margin-left: 10px;
+}
+.enter-the-text{
+    margin-left: 32px;
+}
+.enter-the-text-cars{
+    margin-left: 48px;
+    
+}
+.right{
+    width: 280px;
+    margin-right: 80px;
+}
+.second-right{
+    width: 280px;
+    margin-right: 80px;
+}
+#car-img-of-booking{
+    height: 120px;
+    width: 280px;
+}
+#map-image{
+    height: 120px;
+    width: 280px;
+}
+
+label{
+    display: block;
+    text-align: start;
+    margin: 10px 0;
+}
+.second-section,  .cancel-btn{
+    margin-left: 10px;
+}
+.enter-the-origin{
+     margin-left: 74px;
+}
+.enter-the-desination{
+    margin-left: 38px;
+}
+.enter-the-start-date{
+    margin-left: 49px;
+}
+.enter-the-end-date{
+    margin-left: 55px;
+}
+.price-per-Km{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.booking{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    margin-left: 10px;
+}
+.booking-value{
+    margin-left: 30px;
+}
+.booking-value-1{
+    margin-left: 50px;
+}
+
+.right-container {
+    float: left;
+    width: 30%;
+    height: 89vh;
+    padding-top: 20px;
+    padding-left: 10px;
+    /* margin: 23px 30px; */
+    background-color: azure;
+    border-radius: 20px;
+    border: 1px solid blanchedalmond;
+    margin-top: 20px;
+}
+.cancel-btn{
+    height: 32px;
+    width: 92px;
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    border-radius: 20px;
+    border: 1px solid blueviolet;
+    margin-top: 20px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+.price-per-Km-tax{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.value-of-price{
+    margin-right: 28px;
+}
+.value-of-price-font{
+    font-size: 20px;
+    margin-right: 20px;
+}
+.value-of-price-font-total{
+    font-size: 20px;
+    margin-right: 20px;
+    color: blue;
+}
+.para{
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+.proceed-btn{
+    background-color: blue;
+    color: white;
+    height: 35px;
+    width: 98%;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: 1px solid rgb(43, 226, 134);
+}
