@@ -142,7 +142,7 @@ const EditCarDetails = () => {
 
             </div>
         </div>
-    )
+    )   
 }
 
 export default EditCarDetails
