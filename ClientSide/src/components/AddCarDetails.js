@@ -99,11 +99,12 @@ const AddCarDetails = () => {
             <div className='rightSection'>
                 <form className='form-containor2'>
                     <div className='main-field'>
-                        <p>images:</p>
+                    <input type='file'/>
+                 <p>images:</p>
                         <span>
                             <img src="" alt="" />
                             <img src="" alt="" />
-                        </span>
+                        </span> 
                         <span>
                             <Link to={'/admincardetails'}>
                             <button>Add</button>                          
