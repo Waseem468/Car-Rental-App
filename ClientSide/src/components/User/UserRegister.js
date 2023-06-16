@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../Styles/Register.css";
-import Navbar from "./Navbar";
+import "../../Styles/Register.css";
+import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -108,7 +108,7 @@ const Register = () => {
                 </div>
                 <div className="register-login-form" id="form">
                     <form action="" method="POST" onSubmit={submitForm} className="form-container">
-                        <h6 className="register-heading">Register Your Account</h6>
+                        <h6 className="register-heading">Register Your User Account</h6>
                         {errorText && <div className="error">{errorText}</div>}
                         <input onChange={(e) => updateData(e, 'Name')}
                             value={formData.Name}
