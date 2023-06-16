@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
-import '../Styles/Adminlogin.css';
+import '../../Styles/Adminlogin.css';
 const Adminlogin = () => {
   const [email,setemail]=("");
   const [pass,setpass]=("");
@@ -35,7 +35,7 @@ const Adminlogin = () => {
           </button>
           </Link>
         </div>
-        <Link to={'/register'}>
+        <Link to={'/adminregister'}>
         <div class="admin-link-create-account">Create Account</div>
         </Link>
       </form>

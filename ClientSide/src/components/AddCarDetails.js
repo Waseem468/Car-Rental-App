@@ -87,7 +87,7 @@ const AddCarDetails = () => {
                         />
 
                     </div>
-                    <div className='btn'>
+                    <div className='cancel-btn'>
                         <button style={{
                             width: '150px',
                             height: '35px', borderRadius: '50px', color: 'blue'
@@ -99,11 +99,12 @@ const AddCarDetails = () => {
             <div className='rightSection'>
                 <form className='form-containor2'>
                     <div className='main-field'>
-                        <p>images:</p>
+                    <input type='file'/>
+                 <p>images:</p>
                         <span>
                             <img src="" alt="" />
                             <img src="" alt="" />
-                        </span>
+                        </span> 
                         <span>
                             <Link to={'/admincardetails'}>
                             <button>Add</button>                          

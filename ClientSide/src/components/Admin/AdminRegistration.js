@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import Adminlogin from './Adminlogin'
-import '../Styles/AdminRegistration.css'
+import '../../Styles/AdminRegistration.css'
 import { Link } from 'react-router-dom';
 const AdminRegistration = () => {
   return (
@@ -20,6 +20,10 @@ const AdminRegistration = () => {
             <Link to={'/'}>
             <button className='admin-btn-register'>User Sign in</button> 
             </Link>
+            <Link to={'/adminregister'}>
+            <button className='admin-btn-register1'>Admin Register</button> 
+            </Link>
+
            
           </div>
           <Adminlogin />
