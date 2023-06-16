@@ -1,13 +1,13 @@
 #nav-container {
     height: 11vh;
     width: 100%;
-    background-color: rgb(17, 32, 65);
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 #car-logo{
-    height: 75px;
+    height: 65px;
     width: 75px;
     border-radius: 60%;
     margin-left: 90px;

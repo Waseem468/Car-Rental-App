@@ -87,7 +87,7 @@ const AddCarDetails = () => {
                         />
 
                     </div>
-                    <div className='btn'>
+                    <div className='cancel-btn'>
                         <button style={{
                             width: '150px',
                             height: '35px', borderRadius: '50px', color: 'blue'

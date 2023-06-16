@@ -16,7 +16,7 @@
     height: 89vh;
     padding-top: 20px;
     padding-left: 20px;
-    background-color: azure;
+    background-color: rgb(115, 206, 206);
     border-radius: 20px;
     border: 1px solid blanchedalmond;
     margin-top: 20px;
@@ -114,7 +114,7 @@ label{
     padding-top: 20px;
     padding-left: 10px;
     /* margin: 23px 30px; */
-    background-color: azure;
+    background-color: rgb(115, 206, 206);
     border-radius: 20px;
     border: 1px solid blanchedalmond;
     margin-top: 20px;

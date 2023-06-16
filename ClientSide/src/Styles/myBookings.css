@@ -3,36 +3,30 @@
     background-color: aliceblue;
     height: 89vh;
 }
-
 .mybookings-heading {
     display: flex;
     text-align: start;
     font-weight: bold;
     margin: 15px;
 }
-
 .one-card-for-mybooking-details {
-    height: 136px;
+    height: 150px;
     width: 100vw;
     background-color: black;
 }
 .card-of-the-mybookings{
-    height: 136px;
+    height: 150px;
     width: 97vw;
     margin: 2px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 nav {
     width: 100vw;
     height: 100px;
-
 }
-
 nav div {
     display: flex;
 }
-
 /* .card-of-the-mybookings{
     background-color: aqua;
     display: grid;
@@ -40,65 +34,54 @@ nav div {
 }
 .first-coloumn-of-the-card{
     display: inline-block;
-    background-color: blue; 
+    background-color: blue;
 }*/
-
 #mybooking-car-image {
-    height: 136px;
+    height: 150px;
     width: 198px;
     border-radius: 10px;
     border: 1px solid antiquewhite;
 }
-
 .second-coloumn-of-the-card {
     font-size: 14px;
     display: flex;
     padding-left: 12px;
     width: 220px;
-    height: 136px;
+    height: 150px;
     /* justify-content: center;
     align-items: center; */
     flex-direction: column;
     border: 1px solid antiquewhite;
 }
-
 .mybooking-car-type {
     font-size: 27px;
     font-weight: bolder;
     align-items: center;
 }
-
 .mybooking-car-number {
     font-size: 22px;
     color: darkgray;
 }
-
 .mybooking-car-details {
     margin-top: 3px;
 }
-
 .third-coloumn-of-the-card {
-    height: 136px;
+    height: 150px;
     border: 1px solid aliceblue;
 }
-
-
 .left-origin-destination-start-end {
     width: 198px;
 }
-
 .mybooking-third-section {
     display: flex;
     flex-direction: column;
 }
-
 #map-of-the-mybooking {
-    height: 136px;
+    height: 150px;
     width: 117px;
 }
-
 .left-origin-destination-start-end {
-    height: 136px;
+    height: 150px;
     width: 225px;
     display: flex;
     flex-direction: column;
@@ -106,49 +89,39 @@ nav div {
     /* margin: 8px 2px; */
     border: 1px solid antiquewhite;
 }
-
 .mybooking-destination-date {
     margin: 5px 0px;
 }
-
 .coloumn-mark-origin {
     margin-left: 38px;
 }
-
 .coloumn-mark-destination {
     margin-left: 3px;
 }
-
 .coloumn-mark-start {
     margin-left: 15px;
 }
-
 .coloumn-mark-end {
     margin-left: 18px;
 }
-
 .place-the-value-of-destination-origin {
     font-weight: bold;
     padding-left: 10px;
 }
-
 .place-the-value-of-destination {
     font-weight: bold;
     padding-left: 25px;
 }
-
 .place-the-value-of-destination-start {
     font-weight: bold;
     padding-left: 22px;
 }
-
 .place-the-value-of-destination-end {
     font-weight: bold;
     padding-left: 25px;
 }
-
 .fourth-coloumn-of-the-card {
-    height: 136px;
+    height: 150px;
     width: 225px;
     display: flex;
     flex-direction: column;
@@ -156,7 +129,6 @@ nav div {
     /* margin: 8px 2px; */
     border: 1px solid antiquewhite;
 }
-
 .place-the-value {
     /* font-weight: bold;
     padding-left: 3px; */
@@ -167,7 +139,6 @@ opacity: 0.84;
 font-size: 10px;
 padding: 7px;
 }
-
 .mybooking-id-date-time {
     /* margin: 9px 0px; */
 font: normal normal normal 16px/18px Helvetica Neue;
@@ -176,19 +147,16 @@ color: #1D1D1D;
 opacity: 0.6;
 font-size: 15px;
 }
-
 #id-of-car {
     margin-left: 18px;
 }
-
 .fifth-coloumn-of-the-card {
-    height: 136px;
+    height: 150px;
     width: 260px;
     display: flex;
     padding: 0px;
     border: 1px solid aliceblue;
 }
-
 .edit-btn-mybooking {
     height: 57px;
     width: 80px;
@@ -197,7 +165,6 @@ font-size: 15px;
     border-radius: 20px;
     margin: 37px 28px 37px 28px;
 }
-
 .cancel-btn-mybooking {
     height: 57px;
     width: 174px;
@@ -206,3 +173,17 @@ font-size: 15px;
     border-radius: 20px;
     margin: 37px 20px 37px 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

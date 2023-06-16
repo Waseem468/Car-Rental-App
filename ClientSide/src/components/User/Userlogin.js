@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import "../component/style/userregister.css"
-import '../Styles/Userlogin.css';
+import '../../Styles/Userlogin.css';
 const Userlogin = () => {
   const [formData, setFormData] = useState({
     Email: '',
@@ -69,7 +69,7 @@ const Userlogin = () => {
             </button>
           {/* </Link> */}
         </div>
-        <Link to={'/register'}>
+        <Link to={'/userRegister'}>
           <div class="user-link-create-account">Create Account</div>
         </Link>
       </form>
