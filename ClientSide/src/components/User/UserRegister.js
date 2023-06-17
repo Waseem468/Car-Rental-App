@@ -1,43 +1,47 @@
 import React, { useState } from "react";
 import "../../Styles/Register.css";
 import Navbar from "../Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
-        Name: '',
+        name: '',
         email: '',
         contact: '',
         password: '',
         confirmPassword: ''
     })
     const [errorText, setErrorText] = useState('');
+    const [loder, setLoder] = useState(false)
     function doValidate() {
-        const { Name, email, contact, password, confirmPassword } = formData
-        if (!Name) {
-            return 'name can not be blank'
+        const { name, email, contact, password, confirmPassword } = formData
+        if (!name) {
+            toast.error('name can not be blank')
         }
-        if (!email) {
-            return 'email can not be blank'
+        else if (!email) {
+            toast.error('email can not be blank')
         }
-        if (!contact) {
-            return 'contact can not be blank'
+        else if (!contact) {
+            toast.error('contact can not be blank')
         }
-        if (/\d+/.test(Name)) {
-            return 'Name should contain small case and upper case alphabets'
+        else if (/\d+/.test(name)) {
+            toast.error('Name should contain small case and upper case alphabets')
         }
-        if (!email.includes('@')) {
-            return 'email should contain @'
+        else if (!email.includes('@')) {
+            toast.error('email should contain @')
         }
-        if(!password){
-            return 'password can not be blank'
+        else if (!password) {
+            toast.error('password can not be blank')
         }
-        if(!confirmPassword){
-            return 'confirmPassword can not be blank'
+        else if (!confirmPassword) {
+            toast.error('confirmPassword can not be blank')
         }
-        if (password !== confirmPassword || confirmPassword !== password) {
-            return 'password and confirm password must be same'
+        else if (password !== confirmPassword || confirmPassword !== password) {
+            toast.error('password and confirm password must be same')
         }
-        if (password) {
+        else if (password) {
             const uppercaseRegExp = /(?=.*?[A-Z])/;
             const lowercaseRegExp = /(?=.*?[a-z])/;
             const digitsRegExp = /(?=.*?[0-9])/;
@@ -51,49 +55,68 @@ const Register = () => {
             const minLengthpassword = minLengthRegExp.test(password);
 
             if (passwordLength === 0) {
-                return "password is empty";
+                toast.error("password is empty");
             } else if (!uppercasepassword) {
-                return "At least one Uppercase";
+                toast.error("At least one Uppercase");
             } else if (!lowercasepassword) {
-                return "At least one Lowercase";
+                toast.error("At least one Lowercase");
             } else if (!digitspassword) {
-                return "At least one digit";
+                toast.error("At least one digit");
             } else if (!specialCharpassword) {
-                return "At least one Special Characters";
+                toast.error("At least one Special Characters");
             } else if (!minLengthpassword) {
-                return "At least minumum 8 characters";
+                toast.error("At least minumum 8 characters");
             }
 
             return ''
         }
     }
+    let name, value
+    function handleInputs(e) {
+        name = e.target.name;
+        value = e.target.value;
+        setFormData({ ...formData, [name]: value })
+    }
 
-    function submitForm(e) {
-        e.preventDefault()
+    const PostData = async (e) => {
+        e.preventDefault();
+        const { name, email, contact, password, confirmPassword } = formData;
         const errorMessage = doValidate()
         if (errorMessage) {
             setErrorText(errorMessage)
             console.log('Validation failed! can not submit form.')
         } else {
-            setErrorText('')
-            setFormData({
-                Name: '',
-                email: '',
-                contact: '',
-                password: '',
-                confirmPassword: ''
-            })
-            console.log('Submitting form', formData)
+            setLoder(true)
+            const res = await fetch('http://localhost:5000/user/register', {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    name, email, contact, password, confirmPassword
+                })
+            });
+            const data = await res.json();
+            if (data.status === 'Failed') {
+                toast.error("User Allready Exists")
+                console.log("user already exist")
+            }
+            else if(data.status==='success') {
+                toast.success("Registration Successfull");
+                console.log("Registration Successfull");
+                window.alert("Registration Successfull")
+                setErrorText("")
+                setFormData({
+                    name: "",
+                    email: "",
+                    contact: "",
+                    password: "",
+                    confirmPassword: ""
+                })
+                navigate('/')
+            }
         }
     }
-
-    function updateData(e, propName) {
-        setFormData(data => ({
-            ...data,
-            [propName]: e.target.value
-        }))
-    }
-
     return (
         <>
             <Navbar />
@@ -107,56 +130,65 @@ const Register = () => {
                     </p>
                 </div>
                 <div className="register-login-form" id="form">
-                    <form action="" method="POST" onSubmit={submitForm} className="form-container">
+                    <form method="POST" className="form-container">
                         <h6 className="register-heading">Register Your User Account</h6>
                         {errorText && <div className="error">{errorText}</div>}
-                        <input onChange={(e) => updateData(e, 'Name')}
-                            value={formData.Name}
+                        <input onChange={handleInputs}
+                            value={formData.name}
                             type="text"
                             name="name"
                             className="register-login-admin"
                             placeholder="Name"
                         />
-                        <input onChange={(e) => updateData(e, 'email')}
+                        <input onChange={handleInputs}
                             value={formData.email}
                             type="email"
                             name="email"
                             className="register-login-admin"
                             placeholder="email"
                         />
-                        <input onChange={(e) => updateData(e, 'contact')}
+                        <input onChange={handleInputs}
                             value={formData.contact}
                             type="number"
                             name="contact"
                             className="register-login-admin"
                             placeholder="contact"
                         />
-                         <input onChange={(e) => updateData(e, 'password')}
-                        value={formData.password}
-                        type="text"
-                        name="password"
-                        className="register-login-admin"
-                        placeholder="password"
-                    />
-                    <input onChange={(e) => updateData(e, 'confirmPassword')}
-                        value={formData.confirmPassword}
-                        type="text"
-                        name="confirm_password"
-                        className="register-login-admin"
-                        placeholder="confirm password"
+                        <input onChange={handleInputs}
+                            value={formData.password}
+                            type="text"
+                            name="password"
+                            className="register-login-admin"
+                            placeholder="password"
+                        />
+                        <input onChange={handleInputs}
+                            value={formData.confirmPassword}
+                            type="text"
+                            name="confirmPassword"
+                            className="register-login-admin"
+                            placeholder="confirm password"
 
-                    />
-                    <div className="register-button">
-                        <Link to={'/'}>
-                    <div type="submit" className="signin">Signin</div></Link>
-                    <button type="submit" className="register-btn2">
-                        Register
-                    </button>
+                        />
+                        <div className="register-button">
+                            <Link to={'/'}>
+                                <div type="submit" className="signin">Signin</div></Link>
+                            <button type="submit" className="register-btn2" onClick={PostData}>
+                                Register
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                </form>
-                
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2500}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    theme="dark"
+                />
             </div>
-        </div>
         </>
     );
 };

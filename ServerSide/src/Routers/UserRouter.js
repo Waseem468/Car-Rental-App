@@ -1,9 +1,9 @@
 const express = require("express");
-const {registerController,loginController} = require("../Controller/usercontroller");
+const {UserRegisterMethod,loginController} = require("../Controller/usercontroller");
 
 const router = express.Router();
 
-router.post("/register", registerController);
+router.post("/register", UserRegisterMethod);
 
 //login
 router.post("/login", loginController);

@@ -38,7 +38,7 @@ const AdminLoginMethod = ExpressAsyncHandler(async (req, res) => {
                 const token = await jwt.sign({ _id: admin._id }, SECRET_KEY)
                 res.status(200).send({ status: "Successfully login", token: token, name: admin.Name, AdminId: admin._id })
             } else {
-                res.status(400).send({ status: 'Failed', message: 'No data found' })
+                res.status(400).send({ status: 'fail', message: 'No data found' })
             }
         }
         else {
