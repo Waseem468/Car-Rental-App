@@ -1,49 +1,34 @@
-const { hashPassword, comparePassword } = require("../helper/authHelper");
-const jwt = require("jsonwebtoken");
+const ExpressAsyncHandler = require('express-async-handler');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const ValidateDbID = require('../Utils/ValidateID');
+const GenrateToken = require('../Utils/GenrateToken');
+const SECRET_KEY = process.env.SECRET_KEY
 const userModel = require("../Model/userSchema");
-const registerController = async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
-    //validation
-    if (!name || !email || !password ) {
-      return res.status(404).json({
-        success: false,
-        message: "All fields are required",
-      });
+
+
+const UserRegisterMethod = async (req, res) => {
+    try {
+        let { password, email } = req.body;
+        let HashPassword = await bcrypt.hash(password, 10);
+        let user = await userModel.findOne({ email });
+        if (user) {
+            return res.status(400).json({ status: "Failed", field: "email", message: "Email already exist!!" })
+        }
+        let newUser = await new userModel({
+            ...req.body,
+            password: HashPassword
+        });
+        newUser = await newUser.save();
+        res.status(201).json({ status: 'success', user: newUser })
     }
 
-    //check user
-    const existuser = await userModel.findOne({ email: email });
-    //existing user
-    if (existuser) {
-      return res.status(200).json({
-        success: true,
-        message: "User Already Registered Please Login",
-      });
+    catch (err) {
+        res.status(400).json({ status: "Failed", message: err.message });
     }
 
-    //new register user
-    const hashedPassword = await hashPassword(password);
-    const user = await new userModel({
-      name,
-      email,
-      password: hashedPassword,
-    }).save();
-
-    res.status(201).json({
-      success: true,
-      message: "User Register Successfully",
-      user,
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      success: false,
-      message: "Registration Failed",
-      error,
-    });
-  }
-};
+}
 
 //LOGIN
 const loginController = async (req, res) => {
@@ -94,4 +79,4 @@ const loginController = async (req, res) => {
     });
   }
 };
-module.exports = { registerController, loginController };
+module.exports = { UserRegisterMethod, loginController };
