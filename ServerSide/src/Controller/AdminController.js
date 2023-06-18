@@ -42,7 +42,7 @@ const AdminLoginMethod = ExpressAsyncHandler(async (req, res) => {
             }
         }
         else {
-            res.status(401).send({ status: "fail", message: "User Details Not Match" })
+            res.status(400).send({ status: "fail", message: "User Details Not Match" })
         }
     }
     catch (err) {
