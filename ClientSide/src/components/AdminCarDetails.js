@@ -1,37 +1,34 @@
-import React from 'react'
+import React from "react"
+import { Link } from "react-router-dom";
 import NavLogout from './NavLogout'
 import AdminCarCard from './Booking/AdminCarCard'
 import '../Styles/AdminCarDetails.css'
-import { Link } from 'react-router-dom'
 
 const AdminCarDetails = () => {
+    const AdminName = JSON.parse(localStorage.getItem("Admin-name"))
+
     return (
         <>
             <div className='main-Admin-container'>
                 <NavLogout />
                 <div className='sub-main'>
                     <div className='Admin'>
-                       <h1>Hello Admin...</h1> 
+                        <h1>Hello {AdminName}...</h1>
                     </div>
                     <div className='admin-sub-header'>
-                        <div style={{marginTop:'30px',fontWeight:'bold',marginLeft:'20px'}}>Cars</div>
+                        <div style={{ marginTop: '30px', fontWeight: 'bold', marginLeft: '20px' }}>Cars</div>
                         <Link to={'/addcar'}>
-                        <button className='addcarbtn'>Add Cars</button>
+                            <button className='addcarbtn'>Add Cars</button>
                         </Link>
                     </div>
-                    <div style={{display:"flex",flexDirection:'row'}}>
-                    <AdminCarCard />
-                    <AdminCarCard />
-                    <AdminCarCard />
+                    <div className="Admin-card">
+                        <AdminCarCard />
+                   
                     </div>
-                    <div style={{display:"flex",flexDirection:'row'}}>
-                    <AdminCarCard />
-                    <AdminCarCard />
-                    <AdminCarCard />
-                    </div>
-                    
+
+
                 </div>
-                
+
 
             </div>
 

@@ -50,21 +50,23 @@ const getCarsFromDb = async(req,res)=>{
 
 //  *************Post cars *****************//
 
+
 const PostCarsInDb =  async(req, res)=>{
     try{
-        // if(req.headers.authorization){
-            // let userVar = jwt.verify(req.headers.authorization, SECRET_KEY)//id  //
+        if(req.headers.authorization){
+            let userVar = jwt.verify(req.headers.authorization, SECRET_KEY)//id  //
             console.log(req.file)
-            let data = new carModel({image:req.file.filename,...req.body});
+            let data = new carModel({image:req.file.filename,AdminId:userVar._id,...req.body});
             let createData = await data.save();
             res.status(201).send(createData)
-        // }else{
-        //     res.status(404).send({message:"Unothorized User"})
-        // }
+        }else{
+            res.status(404).send({message:"Unothorized User"})
+        }
     }catch(err){
         res.status(400).json({message:err.message})
     }
 }
+
 
 //  Update car data by using its id//
 
