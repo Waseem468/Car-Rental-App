@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
-import '../Styles/AddCarDetails.css'
-import NavLogout from './NavLogout'
+import '../../Styles/AddCarDetails.css'
+import NavLogout from '../NavLogout'
 import { Link, useNavigate } from 'react-router-dom'
-import { CarContextData } from '../Context/CarContext'
+import { CarContextData } from '../../Context/CarContext'
+import { deleteCar} from '../../Utils/CarUtils'
 
 const EditCarDetails = () => {
     const { setCar, edit, setEdit, car } = useContext(CarContextData);
@@ -128,7 +129,7 @@ const EditCarDetails = () => {
                             />
                         </div>
                         <div >
-                            <button className='cancel-btn' onClick={() => navigator("/adminCarDetails")} >Cancel</button>
+                            <button className='cancel-btn' onClick={() => Navigater("/adminCarDetails")} >Cancel</button>
                         </div>
                     </div>
                     <div className='rightSection'>
@@ -177,7 +178,7 @@ const EditCarDetails = () => {
                                 />
                             </div>
                             <div className='btn2'>
-                                <button onClick={} style={{
+                                <button onClick={()=>{deleteCar(edit._id)}} style={{
                                     width: '150px',
                                     height: '35px', borderRadius: '50px', backgroundColor: 'red'
                                     , color: 'white', marginRight: '10px'

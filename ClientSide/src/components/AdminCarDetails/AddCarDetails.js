@@ -1,10 +1,10 @@
 
 import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import '../Styles/AddCarDetails.css'
-import Navbar from './Navbar'
+import '../../Styles/AddCarDetails.css'
+import Navbar from '../Navbar'
 import { useNavigate } from "react-router-dom"
-import { CarContextData } from '../Context/CarContext'
+import { CarContextData } from '../../Context/CarContext'
 
 const AddCarDetails = () => {
     const navigator = useNavigate();
