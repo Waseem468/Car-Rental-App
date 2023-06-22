@@ -1,16 +1,16 @@
 import React from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AdminCarDetails from './components/AdminCarDetails';
+import AdminCarDetails from './components/AdminCarDetails/AdminCarDetails';
 import EditBooking from './components/Booking/EditBooking';
 import MyBookings from './components/Booking/MyBookings';
 import BookingDetails from './components/Booking/BookingDetails';
 import CarDetails from './components/Booking/CarDetails';
-import AddCarDetails from './components/AddCarDetails';
+import AddCarDetails from './components/AdminCarDetails/AddCarDetails';
 import AdminRegistration from './components/Admin/AdminRegistration';
-import EditCarDetails from './components/EditCarDetails';
+import EditCarDetails from './components/AdminCarDetails/EditCarDetails';
 import Home from './components/Home';
-import Orderpage from './components/Orderpage';
+import Orderpage from './components/Booking/Orderpage';
 // import Register from './components/Register';
 import AdminRegister from './components/Admin/AdminRegister'
 import UserRegister from './components/User/UserRegister'
