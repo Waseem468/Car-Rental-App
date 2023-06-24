@@ -174,3 +174,8 @@ label{
 .payment-heading{
    margin-left: 0px;
 }
+
+.booking-origin{
+    color: bisque;
+    font-weight: bold;
+}
