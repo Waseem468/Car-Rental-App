@@ -1,5 +1,5 @@
 const placeOrders = require('../Model/PlaceOrderSchema');
-const {findById, findByIdAndDelete} = require('../Model/userSchema');
+const { findById, findByIdAndDelete } = require('../Model/userSchema');
 
 const postOrder = async (req, res) => {
     try {
@@ -15,7 +15,7 @@ const postOrder = async (req, res) => {
 const getOrders = async (req, res) => {
     try {
         const userID = req.params.id
-        const exitsOrders = await placeOrders.find({ userId: userID });
+        const exitsOrders = await placeOrders.find();
         res.status(200).json({
             status: "success",
             data: exitsOrders,
@@ -34,7 +34,10 @@ const deleteOrder = async (req, res) => {
     try {
         const ID = req.params.id;
         const deleteTheData = await placeOrders.findByIdAndDelete(ID);
-        res.send(deleteTheData)
+        res.status(200).json({
+            status: "success",
+            data: deleteTheData,
+        });
     } catch (error) {
         res.status(400).send({ message: error.message })
     }
@@ -43,7 +46,7 @@ const deleteOrder = async (req, res) => {
 const updateOrder = async (req, res) => {
     try {
         const ID = req.params.id;
-        const updateTheData = await placeOrders.findByIdAndUpdate({ID}, req.body, { new: true });
+        const updateTheData = await placeOrders.findByIdAndUpdate(ID,req.body, { new: true });
         res.status(201).send(updateTheData)
     } catch (error) {
         res.status(400).send({ message: error.message })

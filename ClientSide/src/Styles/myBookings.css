@@ -1,189 +1,81 @@
-.main-container-for-mybookings {
-    padding: 0px;
-    background-color: aliceblue;
-    height: 89vh;
-}
-.mybookings-heading {
+.main-div{
+   
+    width:100%;
+    border:1px solid rgb(223, 217, 217);
+    border-radius: 8px;
     display: flex;
-    text-align: start;
-    font-weight: bold;
-    margin: 15px;
+    margin-top: 20px;
 }
-.one-card-for-mybooking-details {
-    height: 150px;
-    width: 100vw;
-    background-color: black;
-}
-.card-of-the-mybookings{
-    height: 150px;
-    width: 97vw;
-    margin: 2px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-nav {
-    width: 100vw;
-    height: 100px;
-}
-nav div {
-    display: flex;
-}
-/* .card-of-the-mybookings{
-    background-color: aqua;
-    display: grid;
-    grid-auto-rows: auto;
-}
-.first-coloumn-of-the-card{
-    display: inline-block;
-    background-color: blue;
-}*/
-#mybooking-car-image {
-    height: 150px;
-    width: 198px;
-    border-radius: 10px;
-    border: 1px solid antiquewhite;
-}
-.second-coloumn-of-the-card {
-    font-size: 14px;
-    display: flex;
-    padding-left: 12px;
-    width: 220px;
-    height: 150px;
-    /* justify-content: center;
-    align-items: center; */
-    flex-direction: column;
-    border: 1px solid antiquewhite;
-}
-.mybooking-car-type {
-    font-size: 27px;
+h1{
+    margin-top: 10px;
+    font-size: larger;
     font-weight: bolder;
-    align-items: center;
 }
-.mybooking-car-number {
-    font-size: 22px;
-    color: darkgray;
+.section{
+    text-align: left;
+    border: 1px solid rgb(214, 209, 209);
+    border-radius: 3px;
+    width:30%;
+    
 }
-.mybooking-car-details {
-    margin-top: 3px;
-}
-.third-coloumn-of-the-card {
-    height: 150px;
-    border: 1px solid aliceblue;
-}
-.left-origin-destination-start-end {
-    width: 198px;
-}
-.mybooking-third-section {
-    display: flex;
-    flex-direction: column;
-}
-#map-of-the-mybooking {
-    height: 150px;
-    width: 117px;
-}
-.left-origin-destination-start-end {
-    height: 150px;
-    width: 225px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 2px;
-    /* margin: 8px 2px; */
-    border: 1px solid antiquewhite;
-}
-.mybooking-destination-date {
-    margin: 5px 0px;
-}
-.coloumn-mark-origin {
-    margin-left: 38px;
-}
-.coloumn-mark-destination {
-    margin-left: 3px;
-}
-.coloumn-mark-start {
-    margin-left: 15px;
-}
-.coloumn-mark-end {
-    margin-left: 18px;
-}
-.place-the-value-of-destination-origin {
+#btuunt-concle-in-exsist-Booking{
+    background-color: red;
+    color: aliceblue;
+    font-size: large;
     font-weight: bold;
-    padding-left: 10px;
 }
-.place-the-value-of-destination {
+#btuunt-concle-in-exsist-Booking-edit{
+    background-color:green;
+    color: aliceblue;
+    font-size: large;
     font-weight: bold;
-    padding-left: 25px;
+
 }
-.place-the-value-of-destination-start {
+
+#toyota>h5{
+ color:rgb(112, 103, 103);
+ text-align: center;
+}
+#toyota>h6{
+    color:rgb(117, 108, 108);
+    text-align: center;
+
+   }
+#toyota{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+
+}
+.buttons{
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+   gap:5px;
+}
+button{
+    background-color: rgb(110, 110, 242);
+    border: none;
+    border-radius: 15px;
+    width:90px;
+    height: 40px;
+    
+}
+#dmslamdlmdkemkldm{
+height: 100%;
+}
+.orion-data-of-the-origin-data{
+    font-size: large;
     font-weight: bold;
-    padding-left: 22px;
 }
-.place-the-value-of-destination-end {
-    font-weight: bold;
-    padding-left: 25px;
+#name-of-the-booking-hading-page{
+    color: rgb(159, 157, 157);
+    margin-left: 10px;
 }
-.fourth-coloumn-of-the-card {
-    height: 150px;
-    width: 225px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 2px;
-    /* margin: 8px 2px; */
-    border: 1px solid antiquewhite;
+#Abcdefghijklmn{
+    width: 100%;
+    height: 100%;
 }
-.place-the-value {
-    /* font-weight: bold;
-    padding-left: 3px; */
-font: normal normal medium 20px/25px Helvetica Neue;
-letter-spacing: 0px;
-color: #121212;
-opacity: 0.84;
-font-size: 10px;
-padding: 7px;
+#map-of-the-edit-payment-details{
+    position: absolute;
+    right: 0px;
 }
-.mybooking-id-date-time {
-    /* margin: 9px 0px; */
-font: normal normal normal 16px/18px Helvetica Neue;
-letter-spacing: 0px;
-color: #1D1D1D;
-opacity: 0.6;
-font-size: 15px;
-}
-#id-of-car {
-    margin-left: 18px;
-}
-.fifth-coloumn-of-the-card {
-    height: 150px;
-    width: 260px;
-    display: flex;
-    padding: 0px;
-    border: 1px solid aliceblue;
-}
-.edit-btn-mybooking {
-    height: 57px;
-    width: 80px;
-    background-color: blue;
-    color: white;
-    border-radius: 20px;
-    margin: 37px 28px 37px 28px;
-}
-.cancel-btn-mybooking {
-    height: 57px;
-    width: 174px;
-    background-color: white;
-    color: blue;
-    border-radius: 20px;
-    margin: 37px 20px 37px 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

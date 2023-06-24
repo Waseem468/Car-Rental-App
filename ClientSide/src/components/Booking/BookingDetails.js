@@ -4,6 +4,8 @@ import NavLogout from '../NavLogout';
 import { CarContextData } from '../../Context/CarContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import mapImage from '../../images/map.png';
+
 
 function BookingDetails() {
     const userId = JSON.parse(localStorage.getItem("User-Id"))
@@ -31,7 +33,7 @@ function BookingDetails() {
         startDate: headerData.startDate,
         endDate: headerData.endDate,
     };
-    console.log(headerData)
+    // console.log(headerData)
 
     let Distance, pricing, Subtotal, Tax, total;
     if (!isNaN(CarData.distance)) {
@@ -47,14 +49,15 @@ function BookingDetails() {
         Tax = parseInt((Subtotal) * 0.20);
         total = Subtotal + Tax;
     }
-    
+    // console.log(Object);
     const clickProceed = () => {
-        fetch("https://localhost:5000/orders", {
+        fetch("http://localhost:5000/orders/", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
             body: JSON.stringify(Object)
+            
         }).then(res => res.json())
             .then(data => console.log(data)).catch(err => {
                 console.log(err.message)
@@ -91,7 +94,7 @@ function BookingDetails() {
                         </div>
 
                         <div className='second-right'>
-                            {/* <img src={mapImage} id="map-image" /> */}
+                            <img src={mapImage} id="map-image" alt='map'/>
                         </div>
                     </div>
                     <hr></hr>
@@ -122,7 +125,7 @@ function BookingDetails() {
                             <div className="value-of-price">{CarData.perKm}/Km</div>
                         </div>
                         <div className="price-per-Km">
-                            <div>Price</div>
+                            <div>Sub total</div>
                             <div className="value-of-price-font">{Subtotal} RS</div>
                         </div>
                         <div className="price-per-Km-tax">
@@ -134,7 +137,7 @@ function BookingDetails() {
                     <hr></hr>
                     <div className="payment-second-section">
                         <div className="price-per-Km">
-                            <div>Sub Total</div>
+                            <div>Total</div>
                             <div className="value-of-price-font-total">{total}</div>
                         </div>
 

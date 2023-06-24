@@ -1,58 +1,94 @@
-import React from 'react';
+import React, { useContext, useEffect } from "react";
 import NavLogout from '../NavLogout';
 import '../../Styles/myBookings.css';
-import MybookingCarImage from '../../images/toyata.png';
 import MybookingMapImage from '../../images/map.png';
 import { Link } from 'react-router-dom';
+import { CarContextData } from '../../Context/CarContext'
+import Home from '../Home'
 
 function MyBookings() {
+
+    const { Bookdata, setBookData, setEditBookingDetails } = useContext(CarContextData);
+    const UserToken = JSON.parse(localStorage.getItem("User-token"))
+    const userId = JSON.parse(localStorage.getItem("User-Id"))
+
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/orders/${userId}`)
+
+            .then(res => res.json())
+            .then(result => setBookData((result.data).reverse())).catch(err => {
+                console.log(err.message)
+            })
+    }, [])
+    console.log(Bookdata)
+
+    function deleteCarData(id) {
+
+        fetch(`http://localhost:5000/orders/${userId}`, {
+
+            method: 'DELETE',
+            headers: {
+                "authorization": JSON.parse(localStorage.getItem("User-token"))
+            },
+        }).then(res => {
+            if (res.status === 200) {
+                return true
+            }
+            return false
+        })
+
+    }
+    console.log(Bookdata)
     return (
         <>
-            <NavLogout />
-            <div className="mybookings-heading">My Bookings</div>
-            <div className='one-card-for-mybooking-details'>
-            <nav>
-                <div className="main-container-for-mybookings">
-                    <div className="card-of-the-mybookings">
-                        <div className='first-coloumn-of-the-card'>
-                            <img src={MybookingCarImage} id="mybooking-car-image" />
-                        </div>
-                        {/* <hr></hr> */}
-                        <div className='second-coloumn-of-the-card'>
-                            <div className="mybooking-car-type">Toyata Innova</div>
-                            <div className="mybooking-car-number">KA 37 BB 9999</div>
-                            <div className="mybooking-car-details">Car Details </div>
-                        </div>
-                        {/* <hr></hr> */}
-                        <div className='third-coloumn-of-the-card'>
-                            <div className='left-origin-destination-start-end'>
-                                <div className="mybooking-destination-date">Origin <div className='coloumn-mark-origin'>:</div> <div className="place-the-value-of-destination-origin" id="id-of-car">Bangalore</div></div>
-                                <div className="mybooking-destination-date">Destination <div className='coloumn-mark-destination'>:</div> <div className="place-the-value-of-destination">Mysore</div></div>
-                                <div className="mybooking-destination-date">Start Date <div className='coloumn-mark-start'>:</div> <div className="place-the-value-of-destination-start">16-June-2023</div></div>
-                                <div className="mybooking-destination-date">End Date <div className='coloumn-mark-end'>:</div> <div className="place-the-value-of-destination-end">16-June-2023</div></div>
+            {UserToken ? <>
+                <NavLogout />
+                <h1>My Bookings </h1>
+                {Bookdata.map((d, index) => {
+                      
+                    return <div key={index}>
+                        <div id="outer">
+                            <div className="main-div">
+                                <div id="myimg" className="smallerDiv" >
+                                    <img src={`http://localhost:5000/car/${d.image}`} alt="img" width="200px" />
+                                </div>
+
+                                <div id="toyota" className="section ">
+                                    <h4 >{d.name}</h4>
+                                    <h5>{d.type}</h5>
+                                    <h6>Details: {d.Details}</h6>
+                                    <h6>Car Details: {d.carDetails}</h6>
+                                </div>
+
+                                <div className="smallerDiv">
+                                    <div><span id="name-of-the-booking-hading-page">origin </span>:<span>{d.origin}</span></div>
+                                    <div><span id="name-of-the-booking-hading-page">Destination </span>: <span>{d.destination}</span></div>
+                                    <div> <span id="name-of-the-booking-hading-page">Start Date</span> :<span>{d.startDate}</span></div>
+                                    <div><span id="name-of-the-booking-hading-page">Start Date </span>:<span>{d.endDate}</span></div>
+                                </div>
+                                <div className="smallerDiv">
+                                    <img src={MybookingMapImage} alt="map is unable to render" id="Abcdefghijklmn" />
+                                </div>
+
+                                <div className="smallerDiv">
+                                    <h6> <span id="name-of-the-booking-hading-page">Booking ID</span>: <span>{d.BookingId}</span></h6>
+                                    <h6> <span id="name-of-the-booking-hading-page">Booking Date</span>:<span>{d.date}</span> </h6>
+                                    <h6> <span id="name-of-the-booking-hading-page" >Booking Time</span>: <span>{d.time}</span></h6>
+                                </div>
+                                <div className="smallerDiv" >
+                                    <div className="buttons">
+                                        <Link to="/editbooking" ><button id="btuunt-concle-in-exsist-Booking-edit" onClick={() => setEditBookingDetails(d)}>Edit</button></Link>
+                                        <button id="btuunt-concle-in-exsist-Booking" onClick={() => deleteCarData(d._id)}>Cancel</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div className='right-for-map-of-the-distance'>
-                                <img src={MybookingMapImage} id="map-of-the-mybooking" />
-                            </div>
-                        </div>
-                        {/* <hr></hr> */}
-                        <div className='fourth-coloumn-of-the-card'>
-                            <div className="mybooking-id-date-time">Booking Id : <div className="place-the-value" id="id-of-car">GOTSE8</div></div>
-                            <div className="mybooking-id-date-time">Booking Date : <div className="place-the-value">16-APRIL-2023</div></div>
-                            <div className="mybooking-id-date-time">Booking Time :<div className="place-the-value">8:00 PM</div></div>
-                        </div>
-                        {/* <hr></hr> */}
-                        <div className='fifth-coloumn-of-the-card'>
-                            <Link to={'/editbooking'}>
-                            <button className='edit-btn-mybooking'>EDIT</button>
-                            </Link>
-                            <button className='cancel-btn-mybooking'>CANCEL</button>
                         </div>
                     </div>
-                </div>
-            </nav>
-            </div>
-            
+                })
+                }
+            </> : <Home />}
+
         </>
     );
 }
