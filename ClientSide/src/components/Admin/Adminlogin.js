@@ -60,7 +60,7 @@ const Adminlogin = () => {
     // else {
       setLoder(true)
 
-      fetch("http://localhost:5000/admin/login", {
+      fetch("https://car-rental-app-1-5tgr.onrender.com/admin/login", {
 
         method: "POST",
         headers: {

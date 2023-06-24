@@ -12,7 +12,7 @@ export default function EditBookingDetails() {
     const { BookingId, date, time, image, name, perKm } = EditBookingDetails;
     function editBookingSubmit(e) {
         e.preventDefault();
-        fetch(`http://localhost:5000/orders/:${EditBookingDetails._id}`, {
+        fetch(`https://car-rental-app-1-5tgr.onrender.com/orders/:${EditBookingDetails._id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -42,7 +42,7 @@ export default function EditBookingDetails() {
                             <label for="car-number">Car Number <input type="text" className="enter-the-text" placeholder='Enter a car number' id="car-number" onChange={(e) => setEditBookingDetails({ ...EditBookingDetails, model: e.target.value })} value={EditBookingDetails.model}/></label>
                         </div>
                         <div className='right'>
-                            <img src={`http://localhost:5000/car/${EditBookingDetails.image}`} id="car-img-of-booking" alt="not available" />
+                            <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${EditBookingDetails.image}`} id="car-img-of-booking" alt="not available" />
                         </div>
                     </div>
                     <hr></hr>

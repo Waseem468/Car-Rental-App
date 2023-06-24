@@ -90,7 +90,7 @@ const Register = () => {
             console.log('Validation failed! can not submit form.')
         } else {
             setLoder(true)
-            const res = await fetch('http://localhost:5000/admin/register', {
+            const res = await fetch('https://car-rental-app-1-5tgr.onrender.com/admin/register', {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json",

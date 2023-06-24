@@ -25,7 +25,7 @@ function MyBookings() {
 
     function deleteCarData(id) {
 
-        fetch(`http://localhost:5000/orders/${userId}`, {
+        fetch(`https://car-rental-app-1-5tgr.onrender.com/orders/${id}`, {
 
             method: 'DELETE',
             headers: {
@@ -51,7 +51,7 @@ function MyBookings() {
                         <div id="outer">
                             <div className="main-div">
                                 <div id="myimg" className="smallerDiv" >
-                                    <img src={`http://localhost:5000/car/${d.image}`} alt="img" width="200px" />
+                                    <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${d.image}`} alt="img" width="200px" />
                                 </div>
 
                                 <div id="toyota" className="section ">

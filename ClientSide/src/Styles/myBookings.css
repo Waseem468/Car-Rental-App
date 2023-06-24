@@ -53,7 +53,7 @@ h1{
    gap:5px;
 }
 button{
-    background-color: rgb(110, 110, 242);
+    /* background-color: rgb(110, 110, 242); */
     border: none;
     border-radius: 15px;
     width:90px;

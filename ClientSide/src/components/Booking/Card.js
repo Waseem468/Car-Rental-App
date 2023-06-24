@@ -11,7 +11,7 @@ function Card() {
     const tokenUser = JSON.parse(localStorage.getItem("User-token"))
 
     useEffect(() => {
-        fetch("http://localhost:5000/car/", {
+        fetch("https://car-rental-app-1-5tgr.onrender.com/car/", {
             method: "GET",
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("User-token"))
@@ -26,7 +26,7 @@ function Card() {
                     return <div key={i} className="user-card-container">
                         <div className="user-card-main-container">
                             <div className="image">
-                                <img src={`http://localhost:5000/car/${d.image}`} className="car-image" alt='usercar' />
+                                <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${d.image}`} className="car-image" alt='usercar' />
                             </div>
                             <div className="capacity">6 Persons</div>
                             <div className="innova">

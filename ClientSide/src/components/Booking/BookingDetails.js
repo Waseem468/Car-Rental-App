@@ -51,7 +51,7 @@ function BookingDetails() {
     }
     // console.log(Object);
     const clickProceed = () => {
-        fetch("http://localhost:5000/orders/", {
+        fetch("https://car-rental-app-1-5tgr.onrender.com/orders/", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -79,7 +79,7 @@ function BookingDetails() {
                             <div id="booking-origin"><div>Car Number :</div><div className="enter-the-text-cars-2">{CarData.model}</div></div>
                         </div>
                         <div className='right'>
-                            <img src={`http://localhost:5000/car/${CarData.image}`} id="car-img-of-booking" alt="not available" />
+                            <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${CarData.image}`} id="car-img-of-booking" alt="not available" />
                         </div>
                     </div>
                     <hr></hr>

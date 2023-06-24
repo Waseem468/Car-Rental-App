@@ -17,7 +17,7 @@ function AdminCarCard() {
         if (!localStorage.getItem("Admin-token")) {
             return Navigater('/')
         }
-        fetch("http://localhost:5000/car/", {
+        fetch("https://car-rental-app-1-5tgr.onrender.com/car/", {
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("Admin-token"))
             }
@@ -40,7 +40,7 @@ function AdminCarCard() {
                         return <>
                             <div key={i} className="main-container">
                                 <div className="image">
-                                    <img src={`http://localhost:5000/car/${d.image}`} className="car-image" alt="img"
+                                    <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${d.image}`} className="car-image" alt="img"
                                         onClick={() => {
                                             if (AdminId !== d.AdminId) {
                                                 console.log(d.AdminId)

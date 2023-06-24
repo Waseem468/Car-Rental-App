@@ -45,7 +45,7 @@ const AddCarDetails = () => {
         const newformData = new FormData(e.target)
         // newformData.append("AdminId", localStorage.getItem("Admin-Id"))
 
-        fetch("http://localhost:5000/car/", {
+        fetch("https://car-rental-app-1-5tgr.onrender.com/car/", {
             method: 'POST',
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("Admin-token"))
