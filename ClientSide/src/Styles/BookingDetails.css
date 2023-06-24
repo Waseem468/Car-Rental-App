@@ -2,27 +2,48 @@
     margin: 0;
     padding: 0;
 }
+.second-left {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* font-size: 18px; */
+}
 
 * {
     box-sizing: border-box;
 }
-.booking-details-main-container{
+h4{
+    /* font-size: 31px; */
+    margin-bottom: 11px;
+}
+
+#cars{
+    text-align: left;
+    margin: 5px 0px;
+    width: 270px;
+}
+
+.booking-details-main-container {
     width: 100%;
 }
 
 .booking-details-left-container {
     float: left;
-    width: 70%;
+    width: 64%;
     height: 89vh;
     padding-top: 20px;
     padding-left: 20px;
     background-color: rgb(115, 206, 206);
     border-radius: 20px;
-    border: 1px solid blanchedalmond;
-    margin-top: 20px;
-   
+    border: 1px solid black;
+    margin: 20px 5px 0px 20px;
+
 }
-h5{
+.heading-of-mybooking{
+    font-size: 25px;
+}
+
+h5 {
     text-align: start;
     font-weight: bold;
     font-size: 26px;
@@ -30,81 +51,140 @@ h5{
     margin-left: 0px;
 }
 
-.booking-details-first-section{
+.booking-details-first-section {
     display: flex;
     justify-content: space-between;
     /* margin-top: 10px; */
 }
-.booking-details-second-section{
+
+.booking-details-second-section {
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
 }
-.left{
-    width: 350px;
+
+.left {
+    width: 376px;
     margin-left: 10px;
 }
-.enter-the-text{
+
+.enter-the-text {
     margin-left: 32px;
+    width: 242px;
+
 }
-.enter-the-text-cars{
-    margin-left: 48px;
+
+.enter-the-text-cars {
+    /* margin-left: 48px;
+    width: 244px; */
+    display: flex;
+    text-align: start;
+    /* margin-bottom: 5px; */
     
 }
-.right{
+.enter-the-text-cars-1{
+    margin-left: 47px;
+    font-weight: bold;
+}
+.enter-the-text-cars-2{
+    margin-left: 35px;
+    font-weight: bold;
+}
+
+.right {
     width: 280px;
     margin-right: 80px;
 }
-.booking-details-second-right{
+
+.booking-details-second-right {
     width: 280px;
     margin-right: 80px;
 }
-#car-img-of-booking{
-    height: 120px;
-    width: 280px;
-}
-#map-image{
+
+#car-img-of-booking {
     height: 120px;
     width: 280px;
 }
 
-label{
+#map-image {
+    height: 120px;
+    width: 280px;
+}
+
+label {
     display: block;
     text-align: start;
     margin: 10px 0;
 }
-.second-section,  .cancel-btn{
+
+.second-section,
+.cancel-btn {
     margin-left: 10px;
 }
-.enter-the-origin{
-     margin-left: 74px;
+
+.enter-the-origin {
+    margin-left: 74px;
 }
-.enter-the-desination{
+
+.enter-the-desination {
     margin-left: 38px;
 }
-.enter-the-start-date{
+
+.enter-the-start-date {
     margin-left: 49px;
 }
-.enter-the-end-date{
+
+.enter-the-end-date {
     margin-left: 55px;
 }
-.price-per-Km{
+
+.price-per-Km {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
+#booking-origin{
+    display: flex;
+    justify-content: flex-start;
+    margin: 7px;
+}
+.booking-value-origin-1{
+    margin-left: 76px;
+    text-align: right;
+    font-weight: bold;
+}
+.booking-value-origin-2{
+    margin-left: 46px;
+    text-align: right;
+    font-weight: bold;
+}
 
-.booking{
+.booking-value-origin-3{
+    margin-left: 52px;
+    text-align: right;
+    font-weight: bold;
+}
+.booking-value-origin-4{
+    margin-left: 56px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.booking {
     display: flex;
     justify-content: flex-start;
     margin: 10px;
     margin-left: 10px;
 }
-.booking-value{
+
+.booking-value {
     margin-left: 30px;
+    font-weight: bold;
 }
-.booking-value-1{
+
+.booking-value-1 {
     margin-left: 50px;
+    font-weight: bold;
 }
 
 .booking-details-right-container {
@@ -116,10 +196,11 @@ label{
     /* margin: 23px 30px; */
     background-color: rgb(115, 206, 206);
     border-radius: 20px;
-    border: 1px solid blanchedalmond;
+    border: 1px solid black;
     margin-top: 20px;
 }
-.cancel-btn{
+
+.cancel-btn {
     height: 32px;
     width: 92px;
     background-color: white;
@@ -133,12 +214,13 @@ label{
     margin-top: 20px;
 }
 
-.checkbox{
+.checkbox {
     display: flex;
     justify-content: flex-start;
     margin-top: 30px;
 }
-.price-per-Km-tax{
+
+.price-per-Km-tax {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -146,23 +228,27 @@ label{
     margin-bottom: 15px;
 }
 
-.value-of-price{
+.value-of-price {
     margin-right: 28px;
 }
-.value-of-price-font{
+
+.value-of-price-font {
     font-size: 20px;
     margin-right: 20px;
 }
-.value-of-price-font-total{
+
+.value-of-price-font-total {
     font-size: 20px;
     margin-right: 20px;
     color: blue;
 }
-.para{
-    margin-left: 20px;
+
+.para {
+    margin-left: 40px;
     margin-bottom: 2px;
 }
-.proceed-btn{
+
+.proceed-btn {
     background-color: blue;
     color: white;
     height: 35px;
@@ -171,11 +257,7 @@ label{
     margin-top: 30px;
     border: 1px solid rgb(43, 226, 134);
 }
-.payment-heading{
-   margin-left: 0px;
-}
 
-.booking-origin{
-    color: bisque;
-    font-weight: bold;
+.payment-heading {
+    margin-left: 0px;
 }

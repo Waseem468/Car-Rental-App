@@ -14,7 +14,7 @@ const EditCarDetails = () => {
         e.preventDefault();
         const EditformData = new FormData(e.target)
 
-        fetch(`http://localhost:5000/car/${edit._id}`, {
+        fetch(`https://car-rental-app-1-5tgr.onrender.com/car/${edit._id}`, {
             method: "PUT",
             headers: {
                 "authorization": JSON.parse(localStorage.getItem("Admin-token")),
@@ -149,7 +149,7 @@ const EditCarDetails = () => {
                    
                    <div className="img-sort-box">
 
-                      <img src={`http://localhost:5000/car/${edit.image}`} className="image-preview"alt='set-img' ></img>
+                      <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${edit.image}`} className="image-preview"alt='set-img' ></img>
 
                    </div>
                    

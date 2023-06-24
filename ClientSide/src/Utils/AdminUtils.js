@@ -1,5 +1,5 @@
-// const ADMIN_API='https://car-rental-app1-backend.onrender.com';
-const ADMIN_API='http://localhost:5000'
+const ADMIN_API='https://car-rental-app-1-5tgr.onrender.com'
+
 function addNewAdmin(AdminData){
     return fetch(`${ADMIN_API}/admin/register`, {
         method: 'POST',

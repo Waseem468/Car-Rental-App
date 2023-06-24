@@ -1,5 +1,38 @@
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://car-rental-app-1-5tgr.onrender.com';
+
+
+function GetCars(){
+    return fetch(`${API_BASE_URL}/car`,{
+      headers:{
+          "authorization":JSON.parse(localStorage.getItem("token-admin"))
+      }
+    })
+    .then(res=>res.json())
+  }
+  
+  
+  function GetCar(id){
+      return fetch(`${API_BASE_URL}/car/${id}`,{
+        headers:{
+            "authorization":JSON.parse(localStorage.getItem("token-admin"))
+        }
+      })
+      .then(res=>res.json())
+    }
+  
+  function addCar(cardata){
+      return fetch(`${API_BASE_URL}/car`, {
+          method: 'POST',
+          headers:{
+              "authorization":JSON.parse(localStorage.getItem("token-admin"))
+          },
+         body: cardata
+      })
+      .then(res => res.json())
+  }
+
+
 
 
 function deleteCar(id) {
@@ -16,4 +49,4 @@ function deleteCar(id) {
     })
 }
 
-export { deleteCar}
+export {addCar, GetCars,deleteCar, GetCar}
