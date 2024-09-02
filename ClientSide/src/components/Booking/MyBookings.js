@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import NavLogout from '../NavLogout';
-import '../../Styles/myBookings.css';
+import '../../styles/myBookings.css';
 import MybookingMapImage from '../../images/map.png';
 import { Link } from 'react-router-dom';
-import { CarContextData } from '../../Context/CarContext'
-import Home from '../Home'
+import { CarContextData } from '../../context/CarContext'
+import Home from '../../pages/Home'
 
 function MyBookings() {
 

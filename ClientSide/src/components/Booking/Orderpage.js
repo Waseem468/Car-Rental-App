@@ -1,11 +1,11 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import "../../Styles/Orderpage.css"
+import "../../styles/Orderpage.css"
 import NavLogout from '../NavLogout'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { CarContextData } from '../../Context/CarContext';
-import Home from '../Home'
+import { CarContextData } from '../../context/CarContext';
+import Home from '../../pages/Home'
 
 const Orderpage = () => {
   const tokenUser = JSON.parse(localStorage.getItem("User-token"))

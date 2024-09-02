@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../Styles/subheader.css';
+import '../../styles/subheader.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { CarContextData } from '../../Context/CarContext';
+import { CarContextData } from '../../context/CarContext';
 
 function SubHeader(){
   const { headerData, setheaderData } = useContext(CarContextData);

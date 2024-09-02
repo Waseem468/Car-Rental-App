@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
-import '../../Styles/AdminCarCard.css';
-import { CarContextData } from '../../Context/CarContext'
+import '../../styles/AdminCarCard.css';
+import { CarContextData } from '../../context/CarContext'
 
 
 function AdminCarCard() {

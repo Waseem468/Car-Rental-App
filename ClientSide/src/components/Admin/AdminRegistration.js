@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import Adminlogin from './Adminlogin'
-import '../../Styles/AdminRegistration.css'
+import '../../styles/AdminRegistration.css'
 import { Link } from 'react-router-dom';
 const AdminRegistration = () => {
   return (

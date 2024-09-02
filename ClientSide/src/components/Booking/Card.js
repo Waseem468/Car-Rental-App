@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../Styles/card.css';
-import { CarContextData } from '../../Context/CarContext';
+import '../../styles/card.css';
+import { CarContextData } from '../../context/CarContext';
 import { useContext } from 'react';
-import Home from '../Home'
+import Home from '../../pages/Home'
 
 function Card() {
     const { CarData, setCarData } = useContext(CarContextData);

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom";
 import NavLogout from '../NavLogout'
 import AdminCarCard from './AdminCarCard'
-import '../../Styles/AdminCarDetails.css'
+import '../../styles/AdminCarDetails.css'
 
 const AdminCarDetails = () => {
     const AdminName = JSON.parse(localStorage.getItem("Admin-name"))

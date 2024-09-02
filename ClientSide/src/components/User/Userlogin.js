@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import '../../Styles/Userlogin.css';
+import '../../styles/Userlogin.css';
 
 const Userlogin = () => {
   const Navigater = useNavigate();
@@ -108,7 +108,7 @@ const Userlogin = () => {
           {/* </Link> */}
         </div>
         <Link to={'/userRegister'}>
-          <div class="user-link-create-account">Create Account</div>
+          <div className="user-link-create-account">Create Account</div>
         </Link>
       </form>
       <ToastContainer

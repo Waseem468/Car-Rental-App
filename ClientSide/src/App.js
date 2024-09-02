@@ -1,16 +1,12 @@
-
-import AppRouter from './AppRouter';
-import './App.css';
-import CarContext from './Context/CarContext'
-
-
+import AppRouter from "./AppRouter";
+import "./App.css";
+import CarContext from "./context/CarContext";
 
 function App() {
   return (
-    <CarContext>
-  <AppRouter/>
-    </CarContext>
-
+    <div>
+      <AppRouter />
+    </div>
   );
 }
 

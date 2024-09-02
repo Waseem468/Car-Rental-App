@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Styles/Navbar.css';
-import '../Styles/navLogout.css';
+import '../styles/Navbar.css';
+import '../styles/navLogout.css';
 
 function NavLogout() {
     return (

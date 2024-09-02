@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../Styles/editBooking.css';
+import '../../styles/editBooking.css';
 import NavLogout from '../NavLogout';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { CarContextData } from '../../Context/CarContext';
+import { CarContextData } from '../../context/CarContext';
 import mapImage from '../../images/map.png';
 
 export default function EditBookingDetails() {

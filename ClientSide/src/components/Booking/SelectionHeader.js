@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/selectionHeader.css';
+import '../../styles/selectionHeader.css';
 function SelectionHeader() {
     return (
         <>

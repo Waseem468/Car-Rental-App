@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react'
-import '../../Styles/AddCarDetails.css'
+import '../../styles/AddCarDetails.css'
 import NavLogout from '../NavLogout'
 import { Link, useNavigate } from 'react-router-dom'
-import { CarContextData } from '../../Context/CarContext'
-import { deleteCar} from '../../Utils/CarUtils'
+import { CarContextData } from '../../context/CarContext'
+import { deleteCar} from '../../utils/CarUtils'
 
 const EditCarDetails = () => {
     const { setCar, edit, setEdit, car } = useContext(CarContextData);

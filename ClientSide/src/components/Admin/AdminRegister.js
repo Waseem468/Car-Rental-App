@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../Styles/Register.css";
+import "../../styles/Register.css";
 import Navbar from "../Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"

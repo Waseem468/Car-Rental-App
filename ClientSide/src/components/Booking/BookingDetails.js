@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../Styles/BookingDetails.css';
+import '../../styles/BookingDetails.css';
 import NavLogout from '../NavLogout';
-import { CarContextData } from '../../Context/CarContext';
+import { CarContextData } from '../../context/CarContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import mapImage from '../../images/map.png';
