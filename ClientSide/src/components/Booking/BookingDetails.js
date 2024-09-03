@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/BookingDetails.css';
-import NavLogout from '../NavLogout';
 import { CarContextData } from '../../context/CarContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -69,7 +68,6 @@ function BookingDetails() {
     };
     return (
         <div className="booking-details-main-container">
-            <NavLogout />
             <div className="booking-details-left-container">
                 <div>
                     <div className="booking-details-first-section">

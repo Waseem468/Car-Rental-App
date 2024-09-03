@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { CarContextData } from '../../context/CarContext';
 
 function SubHeader(){
-  const { headerData, setheaderData } = useContext(CarContextData);
+  const { headerData, setHeaderData } = useContext(CarContextData);
     return(
       <>
       <div className='sub-header'>
@@ -14,7 +14,7 @@ function SubHeader(){
         <div className="subheader-name">Start Date</div><div className="mark">{headerData.startDate}</div>
         <div className="subheader-name" >End Date</div><div className="mark">{headerData.endDate}</div>
         <Link to={'/orderpage'}>
-        <button onClick={()=>setheaderData(headerData)} className="modify-btn">MODIFY</button>
+        <button onClick={()=>setHeaderData(headerData)} className="modify-btn">MODIFY</button>
         </Link>
       </div>
       </>

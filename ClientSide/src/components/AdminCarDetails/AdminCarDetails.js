@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import NavLogout from '../NavLogout'
 import AdminCarCard from './AdminCarCard'
 import '../../styles/AdminCarDetails.css'
 
@@ -10,7 +9,6 @@ const AdminCarDetails = () => {
     return (
         <>
             <div className='main-Admin-container'>
-                <NavLogout />
                 <div className='sub-main'>
                     <div className='Admin'>
                         <h1>Hello {AdminName}...</h1>

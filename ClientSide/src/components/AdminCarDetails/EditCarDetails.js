@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import '../../styles/AddCarDetails.css'
-import NavLogout from '../NavLogout'
 import { Link, useNavigate } from 'react-router-dom'
 import { CarContextData } from '../../context/CarContext'
 import { deleteCar} from '../../utils/CarUtils'
@@ -37,7 +36,6 @@ const EditCarDetails = () => {
     const AdminId = JSON.parse(localStorage.getItem("Admin-Id"));
     return (
         <>
-            <NavLogout />
             <div className='addcar-main-containor'>
                 <div className='heading'>
                     <h4>Edit Car Details</h4>

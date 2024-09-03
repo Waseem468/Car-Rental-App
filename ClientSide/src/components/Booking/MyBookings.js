@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import NavLogout from '../NavLogout';
 import '../../styles/myBookings.css';
 import MybookingMapImage from '../../images/map.png';
 import { Link } from 'react-router-dom';
@@ -43,7 +42,6 @@ function MyBookings() {
     return (
         <>
             {UserToken ? <>
-                <NavLogout />
                 <h1>My Bookings </h1>
                 {Bookdata.map((d, index) => {
                       

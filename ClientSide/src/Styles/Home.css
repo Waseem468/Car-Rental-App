@@ -1,4 +1,4 @@
-.Home-container {
+.home-page-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,6 +19,7 @@
   font-size: 2rem;
   line-height: 1.5;
   margin-bottom: 2rem;
+  font-weight: 700;
   /* color: #333; */
   color: white;
 }
@@ -67,7 +68,7 @@
 }
 
 .user-login {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
