@@ -5,60 +5,66 @@ export const CarContextData = createContext();
 export default function CarContext({ children }) {
   const [car, setCar] = useState([]);
   const [edit, setEdit] = useState({});
-
-  const [headerData, setheaderData] = useState({});
-  const [CarData, setCarData] = useState({});
+  const [headerData, setHeaderData] = useState({});
+  const [carData, setCarData] = useState({});
   const [bookingDetails, setBookingDetails] = useState([]);
-  const [Bookdata, setBookData] = useState([]);
-
-  const [inputdata, setInputData] = useState({
+  const [bookData, setBookData] = useState([]);
+  const [inputData, setInputData] = useState({
     origin: "",
     destination: "",
     startDate: "",
     endDate: "",
     distance: "",
   });
-
   const [data, setData] = useState({
     name: "",
     type: "",
     model: "",
-    milage: "",
+    mileage: "",
     image: "",
     availableFrom: "",
     availableTill: "",
     perKm: "",
     description: "",
     carDetails: "",
-    Details: "",
+    details: "",
   });
-  const [EditBookingDetails, setEditBookingDetails] = useState({});
+  const [editBookingDetails, setEditBookingDetails] = useState({});
+  const [view, setView] = useState("login");
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [showAdminRegister, setShowAdminRegister] = useState(false);
+
+
   return (
-    <>
-      <CarContextData.Provider
-        value={{
-          car,
-          setCar,
-          data,
-          setData,
-          edit,
-          setEdit,
-          headerData,
-          setheaderData,
-          CarData,
-          setCarData,
-          bookingDetails,
-          setBookingDetails,
-          Bookdata,
-          setBookData,
-          EditBookingDetails,
-          setEditBookingDetails,
-          inputdata,
-          setInputData,
-        }}
-      >
-        {children}
-      </CarContextData.Provider>
-    </>
+    <CarContextData.Provider
+      value={{
+        car,
+        setCar,
+        data,
+        setData,
+        edit,
+        setEdit,
+        headerData,
+        setHeaderData,
+        carData,
+        setCarData,
+        bookingDetails,
+        setBookingDetails,
+        bookData,
+        setBookData,
+        editBookingDetails,
+        setEditBookingDetails,
+        inputData,
+        setInputData,
+        view,
+        setView,
+        isAdmin,
+        setIsAdmin,
+        showAdminRegister,
+        setShowAdminRegister
+      }}
+    >
+      {children}
+    </CarContextData.Provider>
   );
 }

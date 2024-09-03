@@ -1,0 +1,84 @@
+.user-login-form {
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    max-width: 20rem;
+    margin: auto;
+    text-align: left;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .user-login-form:hover {
+    box-shadow: 0.4rem 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-login-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #333333;
+    font-weight: 600;
+  }
+  
+  .user-login-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .user-login-input:focus {
+    border-color: #6666ff;
+    outline: none;
+  }
+  
+  .user-link-create-account {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #00aaff;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .user-link-create-account:hover {
+    color: #0077cc;
+  }
+  
+  .user-forget-password {
+    font-size: 0.875rem;
+    text-align: right;
+    display: block;
+    margin-bottom: 1rem;
+    color: #666666;
+  }
+  
+  .user-login-page-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    color: #ffffff;
+    background-color: #6666ff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .user-login-page-btn:hover {
+    background-color: #5050e0;
+  }
+  
+  .user-login-page-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  

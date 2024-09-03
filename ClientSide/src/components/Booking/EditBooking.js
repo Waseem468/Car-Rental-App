@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/editBooking.css';
-import NavLogout from '../NavLogout';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CarContextData } from '../../context/CarContext';
@@ -24,7 +23,6 @@ export default function EditBookingDetails() {
     }
     return <>
         <div className="edit-booking-main-container">
-            <NavLogout />
             <form onSubmit={editBookingSubmit}>
                 <div className="left-container">
                     <div className="first-section">
