@@ -1,0 +1,42 @@
+.booking-summary {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin-top: 5vh;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .booking-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .booking-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .booking-value {
+    font-size: 1rem;
+    color: #a43636;
+  }
+  
+  .modify-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modify-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,168 @@
+[
+  {
+    "_id": "1",
+    "carName": "Maruti Suzuki Swift",
+    "carType": "Hatchback",
+    "carModel": "2022",
+    "mileage": "22 km/l",
+    "carNumber": "MH12AB1234",
+    "availableFrom": "2024-09-01T00:00:00.000Z",
+    "availableUntil": "2024-12-31T23:59:59.999Z",
+    "pricePerKm": 8,
+    "description": "A stylish and efficient hatchback.",
+    "carDetails": "Well-maintained, ideal for city use.",
+    "details": "Features include ABS, airbags, and touchscreen infotainment.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/swift.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63a",
+    "createdAt": "2024-09-01T18:00:00.000Z",
+    "updatedAt": "2024-09-01T18:00:00.000Z"
+  },
+  {
+    "_id": "2",
+    "carName": "Hyundai Creta",
+    "carType": "SUV",
+    "carModel": "2023",
+    "mileage": "17 km/l",
+    "carNumber": "DL8CAF9876",
+    "availableFrom": "2024-09-05T00:00:00.000Z",
+    "availableUntil": "2025-01-31T23:59:59.999Z",
+    "pricePerKm": 12,
+    "description": "A popular compact SUV.",
+    "carDetails": "Spacious and well-suited for long drives.",
+    "details": "Panoramic sunroof, ventilated seats, and 6 airbags.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/creta.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63b",
+    "createdAt": "2024-09-05T12:00:00.000Z",
+    "updatedAt": "2024-09-05T12:00:00.000Z"
+  },
+  {
+    "_id": "3",
+    "carName": "Tata Nexon",
+    "carType": "SUV",
+    "carModel": "2024",
+    "mileage": "18 km/l",
+    "carNumber": "UP16DF4321",
+    "availableFrom": "2024-09-10T00:00:00.000Z",
+    "availableUntil": "2025-03-31T23:59:59.999Z",
+    "pricePerKm": 10,
+    "description": "India's safest compact SUV.",
+    "carDetails": "Sturdy and feature-loaded for off-road and city drives.",
+    "details": "5-star Global NCAP safety rating, digital cluster, and more.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/nexon.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63c",
+    "createdAt": "2024-09-10T10:00:00.000Z",
+    "updatedAt": "2024-09-10T10:00:00.000Z"
+  },
+  {
+    "_id": "4",
+    "carName": "Mahindra Thar",
+    "carType": "SUV",
+    "carModel": "2023",
+    "mileage": "13 km/l",
+    "carNumber": "RJ14JK7788",
+    "availableFrom": "2024-10-01T00:00:00.000Z",
+    "availableUntil": "2025-04-30T23:59:59.999Z",
+    "pricePerKm": 15,
+    "description": "An off-road beast.",
+    "carDetails": "Perfect for adventures and rugged terrain.",
+    "details": "Convertible top, 4x4 drive, and infotainment system.",
+    "capacity": 4,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/thar.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63d",
+    "createdAt": "2024-10-01T08:00:00.000Z",
+    "updatedAt": "2024-10-01T08:00:00.000Z"
+  },
+  {
+    "_id": "5",
+    "carName": "Honda City",
+    "carType": "Sedan",
+    "carModel": "2023",
+    "mileage": "18 km/l",
+    "carNumber": "TN22LM9900",
+    "availableFrom": "2024-11-01T00:00:00.000Z",
+    "availableUntil": "2025-05-31T23:59:59.999Z",
+    "pricePerKm": 12,
+    "description": "A premium sedan with a comfortable drive.",
+    "carDetails": "Spacious and feature-packed.",
+    "details": "Sunroof, cruise control, and 6 airbags.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/hondacity.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63e",
+    "createdAt": "2024-11-01T07:00:00.000Z",
+    "updatedAt": "2024-11-01T07:00:00.000Z"
+  },
+  {
+    "_id": "6",
+    "carName": "Kia Seltos",
+    "carType": "SUV",
+    "carModel": "2023",
+    "mileage": "16 km/l",
+    "carNumber": "KA03MZ7654",
+    "availableFrom": "2024-09-15T00:00:00.000Z",
+    "availableUntil": "2025-02-28T23:59:59.999Z",
+    "pricePerKm": 14,
+    "description": "Stylish SUV with advanced features.",
+    "carDetails": "Tech-savvy and comfortable.",
+    "details": "360-degree camera, Bose speakers, and ventilated seats.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/seltos.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c63f",
+    "createdAt": "2024-09-15T15:00:00.000Z",
+    "updatedAt": "2024-09-15T15:00:00.000Z"
+  },
+  {
+    "_id": "7",
+    "carName": "Renault Kwid",
+    "carType": "Hatchback",
+    "carModel": "2023",
+    "mileage": "21 km/l",
+    "carNumber": "WB20PQ7865",
+    "availableFrom": "2024-09-20T00:00:00.000Z",
+    "availableUntil": "2025-03-31T23:59:59.999Z",
+    "pricePerKm": 7,
+    "description": "Compact and affordable for city commutes.",
+    "carDetails": "Small yet practical.",
+    "details": "Touchscreen infotainment, rear camera.",
+    "capacity": 5,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/kwid.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c640",
+    "createdAt": "2024-09-20T09:00:00.000Z",
+    "updatedAt": "2024-09-20T09:00:00.000Z"
+  },
+  {
+    "_id": "8",
+    "carName": "Maruti Suzuki Ertiga",
+    "carType": "MPV",
+    "carModel": "2023",
+    "mileage": "19 km/l",
+    "carNumber": "HR26DF1234",
+    "availableFrom": "2024-09-25T00:00:00.000Z",
+    "availableUntil": "2025-04-30T23:59:59.999Z",
+    "pricePerKm": 11,
+    "description": "Spacious family MPV.",
+    "carDetails": "Comfortable for long journeys.",
+    "details": "7-seater, airbags, and ABS.",
+    "capacity": 7,
+    "images": [
+      "https://res.cloudinary.com/your-cloud-name/image/upload/v1694012345/car_images/ertiga.jpg"
+    ],
+    "adminId": "66dde8dec6182ec137f8c641"
+  }
+]

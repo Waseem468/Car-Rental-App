@@ -70,11 +70,11 @@ const LoginForm = ({ heading, apiUrl, onSuccess, createAccountView }) => {
 
       const res = await response.json();
 
-      if (res.status === "Successfully login") {
+      if (res.success === true) {
         toast.success(onSuccess.message);
         onSuccess.action(res);
         navigate(onSuccess.redirect);
-      } else if (res.status === "fail") {
+      } else if (res.success === false) {
         setLoader(false);
         toast.error("Please enter correct details");
         setError("Details do not match");

@@ -8,7 +8,6 @@ function AdminCarCard() {
     const AdminId = JSON.parse(localStorage.getItem("Admin-Id"));
     console.log(AdminId);
     const Navigater = useNavigate();
-    // const AdminToken = JSON.parse(localStorage.getItem("Admin-token"))
     const [Go, setGo] = useState("");
     const [error, setError] = useState("");
     const { car, setCar, setEdit } = useContext(CarContextData);
