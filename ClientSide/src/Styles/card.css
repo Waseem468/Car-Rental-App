@@ -1,87 +1,83 @@
-.main-car-card-container {
-    
-    
-    width: 100%;
+.car-card {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.user-parent-container {
-  
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
+.car-card-image {
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.user-card-main-container {
-    
-    color: black;
-    margin: 20px;
+.car-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.user-card-container {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    height: 250px;
-    border-radius: 10px;
-    margin-top: 20px;
- 
+.car-card-details {
+  padding: 1rem;
 }
 
-.user-card-main-container {
-    padding: 0px;
-    width: 100%;
-    height: 250px;
-    border-radius: 20px;
-    border: 2px solid black;
-    overflow: hidden;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+.car-capacity {
+  margin-bottom: 1rem;
 }
 
-.car-image {
-    height: 135px;
-    width: 100%;
+.car-price {
+  display: flex;
+  justify-content: space-between;
 }
 
-.capacity {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 3px;
+.car-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.innova {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3px;
-    margin-left: 3px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.car-milage {
+  color: #28a41d;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.color-of-price {
-    color: green;
-    font-weight: bold;
+.car-actions {
+  display: flex;
+  justify-content: space-between;
 }
 
-.bottom-section {
-    width: 100%;
-    margin-top: 3px;
-    border: 1px solid #707070;
-
-
+.fare-details-btn,
+.book-now-btn {
+  width: fit-content;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
 }
 
-.ucard-left-button {
-    float: left;
-    width: 50%;
-    height: 50px;
-    background-color: #FFFFFF;
+.fare-details-btn {
+  background-color: #007bff;
 }
 
-.ucard-right-button {
-    float: left;
-    width: 50%;
-    height: 50px;
-    background-color: blue;
-    color: white;
+.book-now-btn {
+  background-color: #28a745;
+}
 
+.fare-details-btn:hover {
+  background-color: #0056b3;
+}
+
+.book-now-btn:hover {
+  background-color: #218838;
 }

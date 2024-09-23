@@ -3,18 +3,18 @@ import { CarContextData } from "../../context/CarContext";
 import LoginForm from "../LoginForm";
 
 const Adminlogin = () => {
-  const { setView, setShowAdminRegister } = useContext(CarContextData);
+  const { setView, setShowAdminRegister, BaseUrl } = useContext(CarContextData);
 
   const handleSuccess = (res) => {
     localStorage.setItem("Admin-token", JSON.stringify(res.token));
-    localStorage.setItem("Admin-name", JSON.stringify(res.name));
-    localStorage.setItem("Admin-Id", JSON.stringify(res.AdminId));
+    localStorage.setItem("Admin-name", JSON.stringify(res.admin.name));
+    localStorage.setItem("Admin-Id", JSON.stringify(res.admin.adminId));
   };
 
   return (
     <LoginForm
       heading="Sign in to Your Admin Account"
-      apiUrl="https://car-rental-app-1-5tgr.onrender.com/admin/login"
+      apiUrl={`${BaseUrl}/admin/login`}
       onSuccess={{
         message: "Hello Admin, Welcome to manage your cars!",
         action: handleSuccess,

@@ -20,7 +20,6 @@
   line-height: 1.5;
   margin-bottom: 2rem;
   font-weight: 700;
-  /* color: #333; */
   color: white;
 }
 
@@ -45,7 +44,7 @@
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: linear-gradient(135deg, #282c2e, #959fab);
   color: white;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -68,22 +67,46 @@
 }
 
 .user-login {
-  /* flex: 1; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
 }
 
-@media screen and (max-width: 640px) {
-  .Home-container {
+@media screen and (max-width: 1024px) {
+  .home-page-container {
+    padding: 0 3rem;
+    height: auto;
+  }
+
+  .user-text-of-the-home-page {
+    font-size: 1.8rem;
+  }
+
+  .user-signinbutton {
+    gap: 1.5rem;
+  }
+
+  .user-btn-register,
+  .user-admin {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-page-container {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
+    height: auto;
   }
 
   .user-Home-page,
   .user-login {
     width: 100%;
+    align-items: center;
     text-align: center;
   }
 
@@ -93,7 +116,7 @@
   }
 
   .user-signinbutton {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-bottom: 2rem;
   }
@@ -105,7 +128,33 @@
     font-size: 1.2rem;
   }
 
-  .user-login{
+  .user-login {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-page-container {
+    padding: 0.5rem;
+  }
+  .user-Home-page {
+    align-items: center;
+  }
+
+  .user-text-of-the-home-page {
+    display: flex;
+    font-size: 1.3rem;
+  }
+
+  .user-signinbutton {
+    width: 80%;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .user-btn-register,
+  .user-admin {
+    font-size: 1.1rem;
   }
 }

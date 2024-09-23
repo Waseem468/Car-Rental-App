@@ -3,7 +3,7 @@ import Register from "../Register";
 import { CarContextData } from "../../context/CarContext";
 
 const UserRegister = () => {
-  const { setView } = useContext(CarContextData);
+  const { setView, BaseUrl } = useContext(CarContextData);
 
   const handleSignInClick = () => {
     setView("login");
@@ -12,7 +12,7 @@ const UserRegister = () => {
   return (
     <Register
       heading="Register Your User Account"
-      apiEndpoint="https://car-rental-app-1-5tgr.onrender.com/user/register"
+      apiEndpoint={`${BaseUrl}/user/register`}
       onSuccessRedirect="/"
       onSignInClick={handleSignInClick}
     />

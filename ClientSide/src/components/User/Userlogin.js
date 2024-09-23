@@ -3,17 +3,18 @@ import { CarContextData } from "../../context/CarContext";
 import LoginForm from "../LoginForm";
 
 const Userlogin = () => {
-  const { setView } = useContext(CarContextData);
+  const { setView, BaseUrl } = useContext(CarContextData);
 
   const handleSuccess = (res) => {
+    console.log(res,"from user")
     localStorage.setItem("User-token", JSON.stringify(res.token));
-    localStorage.setItem("User-Id", JSON.stringify(res.userId));
+    localStorage.setItem("User-Id", JSON.stringify(res.user.userId));
   };
 
   return (
     <LoginForm
-      heading="Sign in to Your Account"
-      apiUrl="https://car-rental-app-1-5tgr.onrender.com/user/login"
+      heading="Sign in to Your User Account"
+      apiUrl={`${BaseUrl}/user/login`}
       onSuccess={{
         message: "Hello User, Welcome! Choose Your Dream Car",
         action: handleSuccess,

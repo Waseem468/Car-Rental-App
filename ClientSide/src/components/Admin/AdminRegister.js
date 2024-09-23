@@ -3,7 +3,8 @@ import Register from "../Register";
 import { CarContextData } from "../../context/CarContext";
 
 const AdminRegister = () => {
-  const { setIsAdmin, setView, setShowAdminRegister } = useContext(CarContextData);
+  const { setIsAdmin, setView, setShowAdminRegister, BaseUrl } =
+    useContext(CarContextData);
 
   const handleAdminLoginClick = () => {
     setIsAdmin(true);
@@ -14,7 +15,7 @@ const AdminRegister = () => {
   return (
     <Register
       heading="Register Your Admin Account"
-      apiEndpoint="https://car-rental-app-1-5tgr.onrender.com/admin/register"
+      apiEndpoint={`${BaseUrl}/admin/register`}
       onSuccessRedirect="/"
       onSignInClick={handleAdminLoginClick}
     />

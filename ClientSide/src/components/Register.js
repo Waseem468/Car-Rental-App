@@ -77,10 +77,11 @@ const Register = ({
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      console.log(data)
 
-      if (data.status === "Failed") {
+      if (data.success === false) {
         toast.error("User already exists");
-      } else if (data.status === "success") {
+      } else if (data.success === true) {
         toast.success("Registration successful");
         setFormData({
           name: "",

@@ -1,53 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/card.css';
-import { CarContextData } from '../../context/CarContext';
-import { useContext } from 'react';
-import Home from '../../pages/Home'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import "../../styles/card.css";
+import { CarContextData } from "../../context/CarContext";
 
-function Card() {
-    const { CarData, setCarData } = useContext(CarContextData);
-    const [data, setData] = useState([]);
-    const tokenUser = JSON.parse(localStorage.getItem("User-token"))
+const Card = ({ car }) => {
+  const { setUserSelectedCar,setIsEditMode } = useContext(CarContextData);
 
-    useEffect(() => {
-        fetch("https://car-rental-app-1-5tgr.onrender.com/car/", {
-            method: "GET",
-            headers: {
-                "authorization": JSON.parse(localStorage.getItem("User-token"))
-            }
-        }).then(res => res.json())
-            .then(res => setData(res));
-    }, []);
-    return (<>
-        {tokenUser ? <div className='main-car-card-container'>
-            <div className='user-parent-container'>
-                {data.map((d, i) => {
-                    return <div key={i} className="user-card-container">
-                        <div className="user-card-main-container">
-                            <div className="image">
-                                <img src={`https://car-rental-app-1-5tgr.onrender.com/car/${d.image}`} className="car-image" alt='usercar' />
-                            </div>
-                            <div className="capacity">6 Persons</div>
-                            <div className="innova">
-                                <div>{d.name}</div>
-                                <div className="color-of-price">{d.milage}</div>
-                            </div>
-                            <div className="bottom-section">
-                                <button className='ucard-left-button'>Fare Details</button>
-                                <Link to="/bookingdetails">
-                                    <button className='ucard-right-button' onClick={() => setCarData(d)}>BOOK NOW</button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                })
-                }
-            </div>
-        </div> : <Home />}
+  const handleBooking = (car) => {
+    setUserSelectedCar(car);
+    setIsEditMode(false)
+  };
 
-    </>
-    );
-}
+  return (
+    <div className="car-card">
+      <div className="car-card-image">
+        <img
+          src={car.image}
+          alt={car.carName}
+        />
+      </div>
+      <div className="car-card-details">
+        <div className="car-capacity">Capacity: 6 Persons</div>
+        <div className="car-price">
+          <div className="car-name">{car.carName}</div>
+          <div className="car-milage">{car.pricePerKm} Rs/KM</div>
+        </div>
+        <div className="car-actions">
+          <button className="fare-details-btn">Fare Details</button>
+          <Link to="/bookingdetails">
+            <button onClick={()=>handleBooking(car)} className="book-now-btn">Book Now</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Card;

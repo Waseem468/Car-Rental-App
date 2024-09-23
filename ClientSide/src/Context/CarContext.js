@@ -8,14 +8,6 @@ export default function CarContext({ children }) {
   const [headerData, setHeaderData] = useState({});
   const [carData, setCarData] = useState({});
   const [bookingDetails, setBookingDetails] = useState([]);
-  const [bookData, setBookData] = useState([]);
-  const [inputData, setInputData] = useState({
-    origin: "",
-    destination: "",
-    startDate: "",
-    endDate: "",
-    distance: "",
-  });
   const [data, setData] = useState({
     name: "",
     type: "",
@@ -33,7 +25,11 @@ export default function CarContext({ children }) {
   const [view, setView] = useState("login");
   const [isAdmin, setIsAdmin] = useState(false);
   const [showAdminRegister, setShowAdminRegister] = useState(false);
+  const [userSelectedCar,setUserSelectedCar]=useState({});
+  const [isEditMode,setIsEditMode]=useState(false)
 
+  const BaseUrl="http://localhost:5000"
+  // const BaseUrl="https://car-rental-app-1-5tgr.onrender.com"
 
   return (
     <CarContextData.Provider
@@ -50,18 +46,19 @@ export default function CarContext({ children }) {
         setCarData,
         bookingDetails,
         setBookingDetails,
-        bookData,
-        setBookData,
         editBookingDetails,
         setEditBookingDetails,
-        inputData,
-        setInputData,
         view,
         setView,
         isAdmin,
         setIsAdmin,
         showAdminRegister,
-        setShowAdminRegister
+        setShowAdminRegister,
+        userSelectedCar,
+        setUserSelectedCar,
+        BaseUrl,
+        isEditMode,
+        setIsEditMode
       }}
     >
       {children}

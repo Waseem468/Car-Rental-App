@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/BookingForm.css";
 import Home from "./Home";
@@ -6,34 +6,44 @@ import { CarContextData } from "../context/CarContext";
 
 const BookingForm = () => {
   const tokenUser = JSON.parse(localStorage.getItem("User-token"));
-  const { setHeaderData, inputData, setInputData } = useContext(CarContextData);
+  const { headerData, setHeaderData } = useContext(CarContextData);
+  const [inputData, setInputData] = useState({
+    origin: headerData?.origin || "",
+    destination: headerData?.destination || "",
+    startDate: headerData?.startDate || "",
+    endDate: headerData?.endDate || "",
+  });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Prefill the form with headerData if available
+    if (headerData) {
+      setInputData({
+        origin: headerData.origin || "",
+        destination: headerData.destination || "",
+        startDate: headerData.startDate || "",
+        endDate: headerData.endDate || "",
+      });
+    }
+  }, [headerData]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInputData({ ...inputData, [name]: value });
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const { origin, destination, startDate, endDate } = inputData;
 
     if (!origin || !destination || !startDate || !endDate) {
-      // Handle validation errors
       alert("Please fill in all fields.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("origin", origin);
-    formData.append("destination", destination);
-    formData.append("startDate", startDate);
-    formData.append("endDate", endDate);
-
-    console.log(inputData,"from booking form page");
-
+    // Store the current form data into headerData (context)
     setHeaderData(inputData);
-    navigate("/cardetails");
+    navigate("/available-cars"); // Navigate to the next step
   };
 
   if (!tokenUser) {
@@ -42,17 +52,22 @@ const BookingForm = () => {
 
   return (
     <div className="booking-form-container">
+      <div className="booking-quotes">
+        <p className="user-text-of-the-home-page">
+          You can Unlock the Best Deals <br />
+          Book Your Dream Ride <br />
+          Today!
+        </p>
+      </div>
       <div className="booking-form">
         <form onSubmit={handleFormSubmit}>
-          <h4>
-            Where Every Drive Becomes an Experience – Find Your Ideal Car with
-            Us.
-          </h4>
+          <h4>Your Next Journey Starts with the Perfect Car.</h4>
           <input
             type="text"
             name="origin"
             className="booking-input"
             placeholder="Origin"
+            value={inputData.origin}
             onChange={handleInputChange}
             required
           />
@@ -61,6 +76,7 @@ const BookingForm = () => {
             name="destination"
             className="booking-input"
             placeholder="Destination"
+            value={inputData.destination}
             onChange={handleInputChange}
             required
           />
@@ -69,6 +85,7 @@ const BookingForm = () => {
             name="startDate"
             className="booking-input"
             placeholder="Start Date"
+            value={inputData.startDate}
             onChange={handleInputChange}
             required
           />
@@ -77,6 +94,7 @@ const BookingForm = () => {
             name="endDate"
             className="booking-input"
             placeholder="End Date"
+            value={inputData.endDate}
             onChange={handleInputChange}
             required
           />
