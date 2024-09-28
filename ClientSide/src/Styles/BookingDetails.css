@@ -136,20 +136,27 @@ hr {
   font-weight: 600;
 }
 
-.cancel-btn {
-  background-color: #ff4d4d;
+.booking-cancel-btn {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff4d4d, #e63939);
   color: #fff;
   border: none;
-  padding: 1.2rem 4rem;
-  border-radius: 1rem;
+  padding: 0.7rem 4rem;
+  border-radius: 100px;
   cursor: pointer;
   font-size: 1.1rem; 
-  font-weight: 500; 
-  text-align: center;
+  font-weight: 700; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.cancel-btn:hover {
-  background-color: #e63939;
+.booking-cancel-btn:hover {
+  background: linear-gradient(135deg, #e63939, #d12727);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 /* Right Container */
@@ -179,6 +186,13 @@ hr {
 }
 
 .tax-value{
+  font-size: 0.8rem;
+  font-weight: 500; 
+  color: #7f8c8d;
+}
+
+.tex-value-of-price{
+  font-size: 0.8rem;
   font-weight: 500; 
   color: #7f8c8d;
 }
@@ -193,24 +207,28 @@ hr {
   font-weight: 600;
 }
 
-.proceed-btn {
+.booking-proceed-btn {
   width: fit-content;
   margin-top: 2rem;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #28a745;
+  background: linear-gradient(135deg, #28a745, #218838);
   color: #fff;
   border: none;
-  padding: 1.2rem 2rem;
-  border-radius: 1rem;
+  padding: 0.7rem 3rem;
+  border-radius: 100rem;
   cursor: pointer;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.proceed-btn:hover {
-  background-color: #218838;
+.booking-proceed-btn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {

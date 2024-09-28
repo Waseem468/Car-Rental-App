@@ -7,6 +7,7 @@ export const getLatLng = async (location) => {
     const response = await axios.get(
       `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${cageKey}`
     );
+    console.log(response,"response of api")
     const { lat, lng } = response.data.results[0].geometry;
     return { latitude: lat, longitude: lng };
   } catch (error) {

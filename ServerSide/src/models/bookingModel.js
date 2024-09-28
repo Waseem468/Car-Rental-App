@@ -17,6 +17,9 @@ const bookingSchema = new mongoose.Schema(
     carNumber: {
       type: String,
     },
+    pricePerKm: {
+      type: String,
+    },
     origin: {
       type: String,
       required: true,

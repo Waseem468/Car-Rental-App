@@ -26,7 +26,7 @@ function BookingDetails() {
 
   const [bookingDetails, setBookingDetails] = useState({
     carName: userSelectedCar?.carName || editBookingDetails?.carName || "",
-    perKm: userSelectedCar?.pricePerKm || editBookingDetails?.pricePerKm || "",
+    pricePerKm: userSelectedCar?.pricePerKm || editBookingDetails?.pricePerKm || "",
     details:
       userSelectedCar?.carDetails || editBookingDetails?.carDetails || "",
     carNumber:
@@ -81,7 +81,7 @@ function BookingDetails() {
 
   const calculatePrice = () => {
     const distance = parseInt(bookingDetails.distance) || 0;
-    const perKm = parseInt(bookingDetails.perKm) || 0;
+    const perKm = parseInt(bookingDetails.pricePerKm) || 0;
     const subtotal = distance * perKm;
     const tax = parseInt(subtotal * 0.2);
     const total = subtotal + tax;
@@ -249,7 +249,7 @@ function BookingDetails() {
         </div>
         <hr />
         <button
-          className="cancel-btn"
+          className="booking-cancel-btn"
           onClick={() => navigate("/available-cars")}
         >
           CANCEL
@@ -262,15 +262,15 @@ function BookingDetails() {
           <h5 className="payment-heading">Payment Details</h5>
           <div className="price-per-Km">
             <div>Price per km</div>
-            <div className="value-of-price">{bookingDetails.perKm}/Km</div>
+            <div className="value-of-price">{bookingDetails.pricePerKm}/Km</div>
           </div>
           <div className="price-per-Km">
             <div>Sub total</div>
             <div className="value-of-price-font">{subtotal} RS</div>
           </div>
-          <div className="price-per-Km-tax">
+          <div className="price-per-Km">
             <div className="tax-value">Tax Charges</div>
-            <div className="value-of-price">{tax} RS</div>
+            <div className="tex-value-of-price">{tax} RS</div>
           </div>
         </div>
         <hr />
@@ -279,7 +279,7 @@ function BookingDetails() {
             <div>Total</div>
             <div className="value-of-price-font-total">{total} RS</div>
           </div>
-          <button className="proceed-btn" onClick={handleBookingSubmit}>
+          <button className="booking-proceed-btn" onClick={handleBookingSubmit}>
             {isEditMode ? "Update Booking" : "Proceed"}
           </button>
         </div>
