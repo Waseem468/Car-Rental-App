@@ -1,32 +1,55 @@
-.main-Admin-container{
-    width: 100%;
+.admin-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  background: #edf1f2;
 }
 
-.sub-main{
-    padding:20px;
-    padding-left: 50px;
-    align-items: left;
-
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
 }
-.admin-sub-header{
-    display: flex;
+
+.admin-content {
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.admin-header {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 1.875rem;
 }
-.addcarbtn{
-    margin-right: 20px;
-    background-color:#007FED;
-    width: 90px;
-    border-radius: 5px;
-    height: 40px;
-    color: white;
-}
-.Admin{
-    margin-left: 20px;
 
+.admin-header-title {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
-/* .Admin-card{
-    display:flex;
-    flex-direction: row-reverse;
-    width: 100%;
 
-} */
+.admin-add-car-btn {
+  background-color: #007fed;
+  width: 6.625rem;
+  border-radius: 0.3125rem;
+  height: 2.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.admin-add-car-btn:hover {
+  background-color: teal;
+  color: white;
+}
+
+.admin-cars-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}

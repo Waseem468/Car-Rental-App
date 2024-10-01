@@ -1,280 +1,256 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import "../../styles/AddCarDetails.css";
 import { useNavigate } from "react-router-dom";
 import { CarContextData } from "../../context/CarContext";
+import "../../styles/AddCarDetails.css";
 
 const AddCarDetails = () => {
-  const navigator = useNavigate();
-  const { setCar } = useContext(CarContextData);
-  const [imageUrl, setImageUrl] = useState();
-  const [data, setData] = useState({
-    name: "",
-    type: "",
-    model: "",
-    milage: "",
-    image: "",
-    availableFrom: "",
-    availableTill: "",
-    perKm: "",
-    description: "",
-    carDetails: "",
-    Details: "",
-  });
-  const {
-    name,
-    type,
-    model,
-    milage,
-    image,
-    perKm,
-    description,
-    carDetails,
-    Details,
-    availabelUntil,
-    availabelFrom,
-  } = data;
-
-  const [loder, setLoder] = useState(false);
+  const navigate = useNavigate();
+  const { setCarDetails, BaseUrl } = useContext(CarContextData);
   const AdminToken = JSON.parse(localStorage.getItem("Admin-token"));
 
-  // const handleimagechange = (e) => {
+  // Updated state to match the controller's required fields
+  const [formData, setFormData] = useState({
+    carName: "",
+    carType: "",
+    carModel: "",
+    mileage: "",
+    carNumber: "",
+    availableFrom: "",
+    availableUntil: "",
+    pricePerKm: "",
+    description: "",
+    carDetails: "",
+    details: "",
+    capacity: "",
+    image: "",
+  });
 
-  //     const imagearray = [];
-  //     const images = e.target.files
+  const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  //     for (let i = 0; i < images.length; i++) {
-  //         imagearray.push(URL.createObjectURL(images[i]))
-  //     }
-  //     setimage(imagearray)
-  //     console.log(imagearray);
-  // }
+  // Handle input change for text fields
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  // Handle image input change
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImageUrl(URL.createObjectURL(file)); // Preview image
+    setFormData((prevData) => ({ ...prevData, image: file })); // Store the file in state
+  };
+
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
-    const newformData = new FormData(e.target);
-    // newformData.append("AdminId", localStorage.getItem("Admin-Id"))
+    setLoading(true);
 
-    fetch("https://car-rental-app-1-5tgr.onrender.com/car/", {
+    // Create FormData object for sending files and text data
+    const newFormData = new FormData();
+    for (let key in formData) {
+      newFormData.append(key, formData[key]);
+    }
+
+    // Perform the fetch request
+    fetch(`${BaseUrl}/car/add-car`, {
       method: "POST",
       headers: {
-        authorization: JSON.parse(localStorage.getItem("Admin-token")),
+        authorization: `Bearer ${AdminToken}`,
       },
-      body: newformData,
+      body: newFormData, 
     })
       .then((res) => res.json())
       .then((data) => {
-        setCar((d) => {
-          return [data, ...d];
-        });
+        setCarDetails((prevCars) => [data, ...prevCars]);
+        navigate("/adminCarDetails");
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
-    setLoder(false);
-    setData({
-      name: "",
-      type: "",
-      model: "",
-      milage: "",
-      image: "",
-      availableFrom: "",
-      availableTill: "",
-      perKm: "",
-      description: "",
-      carDetails: "",
-      Details: "",
-    });
-    navigator("/adminCarDetails");
+      .catch((err) => console.error(err.message))
+      .finally(() => setLoading(false));
   };
+
+  const handleCancel = () => {
+    navigate("/adminCarDetails");
+  };
+
   return (
-    <>
-      <div className="addcar-main-containor">
-        <div className="addcar-heading">
-          <h4 className="heading">Add Car Details</h4>
-        </div>
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <div className="leftSection addcar-form-containor">
-            <div className="Field-containor">
-              <label style={{ marginTop: "0px" }}>Car name:</label>
+    <div className="addcar-container">
+      <h4 className="addcar-heading">Add Car Details</h4>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className="addcar-section">
+          <div className="addcar-section-left">
+            <div className="field-group">
+              <label>Car Name:</label>
               <input
-                onChange={(e) => setData({ ...data, name: e.target.value })}
-                value={name}
-                name="name"
+                name="carName"
                 type="text"
                 placeholder="Enter your Car name"
+                value={formData.carName}
+                onChange={handleChange}
               />
             </div>
-            <div className="main-field">
-              <div className="Field-containor">
+            <div className="field-row">
+              <div className="field-group">
                 <label>Type</label>
                 <select
-                  name="type"
-                  onChange={(e) => setData({ ...data, type: e.target.value })}
-                  value={type}
+                  name="carType"
+                  value={formData.carType}
+                  onChange={handleChange}
                 >
-                  <option>select</option>
-                  <option>UV</option>
-                  <option>XUV</option>
-                  <option>SUV</option>
-                  <option>MUV</option>
-                  <option>Hatch-Back</option>
+                  <option value="">Select</option>
+                  <option value="UV">UV</option>
+                  <option value="XUV">XUV</option>
+                  <option value="SUV">SUV</option>
+                  <option value="MUV">MUV</option>
+                  <option value="Hatchback">Hatchback</option>
                 </select>
               </div>
-              <div className="Field-containor">
-                <label>Model </label>
+              <div className="field-group">
+                <label>Model</label>
                 <select
-                  name="model"
-                  onChange={(e) => setData({ ...data, model: e.target.value })}
-                  value={model}
+                  name="carModel"
+                  value={formData.carModel}
+                  onChange={handleChange}
                 >
-                  <option>Select</option>
-                  <option value="Ford">I20</option>
-                  <option value="Volvo">Sports10</option>
-                  <option value="Fiat">Grand I20</option>
+                  <option value="">Select</option>
+                  <option value="I20">I20</option>
+                  <option value="Sports10">Sports10</option>
+                  <option value="Grand I20">Grand I20</option>
                 </select>
               </div>
             </div>
-            <div className="main-field">
-              <div className="Field-containor">
-                <label>Milage </label>
+
+            <div className="field-row">
+              <div className="field-group">
+                <label>Mileage</label>
                 <select
-                  name="milage"
-                  onChange={(e) => setData({ ...data, milage: e.target.value })}
-                  value={milage}
+                  name="mileage"
+                  value={formData.mileage}
+                  onChange={handleChange}
                 >
-                  <option>Select</option>
-                  <option>20Km/L</option>
-                  <option>14Km/L</option>
-                  <option>15Km/L</option>
-                  <option>18Km/L</option>
-                  <option>10Km/L</option>
+                  <option value="">Select</option>
+                  <option value="20Km/L">20Km/L</option>
+                  <option value="14Km/L">14Km/L</option>
+                  <option value="15Km/L">15Km/L</option>
+                  <option value="18Km/L">18Km/L</option>
+                  <option value="10Km/L">10Km/L</option>
                 </select>
               </div>
-              <div className="Field-containor">
-                <label>Per KM: </label>
+              <div className="field-group">
+                <label>Price Per KM</label>
                 <input
-                  onChange={(e) => setData({ ...data, perKm: e.target.value })}
-                  value={perKm}
-                  name="perKm"
+                  name="pricePerKm"
                   type="text"
-                  placeholder="0 0 0 0"
+                  placeholder="0000"
+                  value={formData.pricePerKm}
+                  onChange={handleChange}
+                  style={{ width: "90%" }}
                 />
               </div>
             </div>
-            <div className="main-field">
-              <div className="Field-containor">
-                <label>Available from </label>
+
+            <div className="field-row">
+              <div className="field-group">
+                <label>Available From</label>
                 <input
-                  onChange={(e) =>
-                    setData({ ...data, availabelFrom: e.target.value })
-                  }
-                  value={availabelFrom}
-                  name="availabelFrom"
+                  name="availableFrom"
                   type="date"
+                  value={formData.availableFrom}
+                  onChange={handleChange}
+                  style={{ width: "90%" }}
                 />
               </div>
-              <div className="Field-containor">
-                <label>Available Till </label>
+              <div className="field-group">
+                <label>Available Until</label>
                 <input
-                  onChange={(e) =>
-                    setData({ ...data, availabelUntil: e.target.value })
-                  }
-                  value={availabelUntil}
-                  name="availabelUntil"
+                  name="availableUntil"
                   type="date"
+                  value={formData.availableUntil}
+                  onChange={handleChange}
+                  style={{ width: "90%" }}
                 />
               </div>
             </div>
-            <div className="Field-containor">
-              <label>Description:</label>
+
+            <div className="field-group">
+              <label>Capacity</label>
               <input
-                onChange={(e) =>
-                  setData({ ...data, description: e.target.value })
-                }
-                value={description}
+                name="capacity"
+                type="number"
+                placeholder="Enter car capacity"
+                value={formData.capacity}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="field-group">
+              <label>Car Number</label>
+              <input
+                name="carNumber"
+                type="text"
+                placeholder="Enter car number"
+                value={formData.carNumber}
+                onChange={handleChange}
+              />
+            </div>
+
+            <button type="button" className="btn-cancel" onClick={handleCancel}>
+              Cancel
+            </button>
+          </div>
+
+          <div className="addcar-section-right">
+            <div className="field-group">
+              <label>Car Image</label>
+              <input type="file" name="image" onChange={handleImageChange} />
+              {imageUrl && (
+                <div className="image-preview">
+                  <img src={imageUrl} alt="Preview" />
+                </div>
+              )}
+            </div>
+
+            <div className="field-group">
+              <label>Car Details</label>
+              <textarea
+                name="carDetails"
+                placeholder="Enter car details"
+                value={formData.carDetails}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="field-group">
+              <label>Description</label>
+              <textarea
                 name="description"
                 type="text"
                 placeholder="Description"
+                value={formData.description}
+                onChange={handleChange}
               />
             </div>
-            <div>
-              <button
-                className="cancel-btn"
-                onClick={() => navigator("/adminCarDetails")}
-              >
-                Cancel
+
+            <div className="field-group">
+              <label>Details</label>
+              <textarea
+                name="details"
+                placeholder="Enter additional details"
+                value={formData.details}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="btn-submit">
+              <button type="submit" disabled={loading}>
+                {loading ? "Adding..." : "Add"}
               </button>
             </div>
           </div>
-          <div className="rightSection">
-            <div className="form-containor2">
-              <div className="main-field">
-                <input
-                  type="file"
-                  name="image"
-                  onChange={(e) => {
-                    setImageUrl(URL.createObjectURL(e.target.files[0]));
-                    setData({ ...data, image: e.target.files[0] });
-                  }}
-                ></input>
-                {imageUrl ? (
-                  <div>
-                    <div className="image-preview">
-                      <img
-                        src={imageUrl}
-                        className="image-preview"
-                        alt="img-preview"
-                      ></img>
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-              <div className="Field-containor">
-                <label>Car Details: </label>
-                <input
-                  onChange={(e) =>
-                    setData({ ...data, carDetails: e.target.value })
-                  }
-                  value={carDetails}
-                  name="carDetails"
-                  type="text"
-                  placeholder="Enter your Car Details"
-                  style={{ height: "70px" }}
-                />
-              </div>
-              <div className="Field-containor">
-                <label>Details: </label>
-                <input
-                  onChange={(e) =>
-                    setData({ ...data, Details: e.target.value })
-                  }
-                  value={Details}
-                  name="Details"
-                  type="text"
-                  placeholder="Enter your Details"
-                  style={{ height: "70px" }}
-                />
-              </div>
-              <div className="btn2">
-                <button
-                  type="submit"
-                  style={{
-                    width: "150px",
-                    height: "35px",
-                    borderRadius: "50px",
-                    backgroundColor: "blue",
-                    color: "white",
-                  }}
-                >
-                  ADD
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </>
+        </div>
+      </form>
+    </div>
   );
 };
+
 export default AddCarDetails;

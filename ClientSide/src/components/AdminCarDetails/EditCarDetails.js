@@ -5,7 +5,7 @@ import { CarContextData } from '../../context/CarContext'
 import { deleteCar} from '../../utils/CarUtils'
 
 const EditCarDetails = () => {
-    const { setCar, edit, setEdit, car } = useContext(CarContextData);
+    const { setCarDetails, edit, setEdit, car } = useContext(CarContextData);
     const [imageUrl, setImageUrl] = useState("");
     const Navigater = useNavigate();
 
@@ -21,7 +21,7 @@ const EditCarDetails = () => {
             },
             body: EditformData
         }).then(res => res.json())
-            .then(data => setCar(e => {
+            .then(data => setCarDetails(e => {
                 return e.map(d => {
                     if (d._id === data._id) {
                         return data

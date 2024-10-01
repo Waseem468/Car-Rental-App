@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CarContextData } from "../context/CarContext";
 import Home from "./Home";
 import MapComponent from "../components/LeafletMap/MapComponent";
-import { getLatLng } from "../utils/getLatLong";
+import { getLatLng } from "../utils/bookingValidation";
 
 function MyBookings() {
   const { setEditBookingDetails, BaseUrl, setIsEditMode } =

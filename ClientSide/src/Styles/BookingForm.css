@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh; /* Full screen height for better centering */
   padding: 10rem;
+  background-image: url("../images/carRentBg2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .booking-quotes {
@@ -18,7 +22,7 @@
   display: flex;
   padding: 2rem;
   background: rgba(5, 5, 5, 0.85);
-  /* backdrop-filter: blur(2.5rem); */
+  backdrop-filter: blur(2.5rem);
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   width: 100%;
