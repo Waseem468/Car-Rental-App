@@ -1,32 +1,49 @@
-.main-Admin-container{
-    width: 100%;
+.admin-container {
+  padding: 2rem 6rem;
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
 }
 
-.sub-main{
-    padding:20px;
-    padding-left: 50px;
-    align-items: left;
-
+.admin-greeting {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #a54747;
 }
-.admin-sub-header{
-    display: flex;
+
+.admin-header {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-.addcarbtn{
-    margin-right: 20px;
-    background-color:#007FED;
-    width: 90px;
-    border-radius: 5px;
-    height: 40px;
-    color: white;
-}
-.Admin{
-    margin-left: 20px;
 
+.admin-header h2 {
+  font-size: 2rem;
+  color: #333;
 }
-/* .Admin-card{
-    display:flex;
-    flex-direction: row-reverse;
-    width: 100%;
 
-} */
+.admin-add-car-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-add-car-btn:hover {
+  background-color: #0056b3;
+}
+
+.admin-cars-list {
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  gap: 1.5rem;
+}
+
+.admin-add-car-link {
+  text-decoration: none;
+}

@@ -15,7 +15,7 @@ const router = express.Router();
 router.post("/add-car", adminAuth, addCar);
 
 // Get all cars added by the admin
-router.get("/my-cars", adminAuth, getAllCarsByAdmin);
+router.get("/my-cars/:adminId", adminAuth, getAllCarsByAdmin);
 
 // Edit a car
 router.put("/edit-car/:id", adminAuth, editCar);

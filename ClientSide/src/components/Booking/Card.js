@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/card.css";
 import { CarContextData } from "../../context/CarContext";
-
+import { truncate } from "../../utils/truncateWord";
 const Card = ({ car }) => {
   const { setUserSelectedCar,setIsEditMode } = useContext(CarContextData);
 
@@ -22,7 +22,7 @@ const Card = ({ car }) => {
       <div className="car-card-details">
         <div className="car-capacity">Capacity: 6 Persons</div>
         <div className="car-price">
-          <div className="car-name">{car.carName}</div>
+          <div className="car-name">{truncate(car.carName,13)}</div>
           <div className="car-milage">{car.pricePerKm} Rs/KM</div>
         </div>
         <div className="car-actions">

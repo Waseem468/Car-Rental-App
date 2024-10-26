@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "../../src/styles/BookingDetails.css";
 import { v4 as uuidv4 } from "uuid";
 import { CarContextData } from "../context/CarContext";
-import { getLatLng } from "../utils/getLatLong";
+import { getLatLng, validateLocationsInIndia } from "../utils/bookingValidation";
 import { calculateDistance } from "../utils/calculateDistance";
 import MapComponent from "../components/LeafletMap/MapComponent";
-import {formatDate,formatTime} from "../utils/formatDateTime"
+import { formatDate, formatTime } from "../utils/formatDateTime";
+import { ToastContainer } from "react-toastify";
 
 function BookingDetails() {
   const navigate = useNavigate();
@@ -26,7 +27,8 @@ function BookingDetails() {
 
   const [bookingDetails, setBookingDetails] = useState({
     carName: userSelectedCar?.carName || editBookingDetails?.carName || "",
-    perKm: userSelectedCar?.pricePerKm || editBookingDetails?.pricePerKm || "",
+    pricePerKm:
+      userSelectedCar?.pricePerKm || editBookingDetails?.pricePerKm || "",
     details:
       userSelectedCar?.carDetails || editBookingDetails?.carDetails || "",
     carNumber:
@@ -81,7 +83,7 @@ function BookingDetails() {
 
   const calculatePrice = () => {
     const distance = parseInt(bookingDetails.distance) || 0;
-    const perKm = parseInt(bookingDetails.perKm) || 0;
+    const perKm = parseInt(bookingDetails.pricePerKm) || 0;
     const subtotal = distance * perKm;
     const tax = parseInt(subtotal * 0.2);
     const total = subtotal + tax;
@@ -90,7 +92,17 @@ function BookingDetails() {
 
   const { subtotal, tax, total } = calculatePrice();
 
-  const handleBookingSubmit = () => {
+  const handleBookingSubmit = async () => {
+    // Validate origin and destination before submission
+    const isValid = await validateLocationsInIndia(
+      bookingDetails.origin,
+      bookingDetails.destination
+    );
+
+    if (!isValid) {
+      // If validation fails, do not proceed with the submission
+      return;
+    }
     const endpoint = isEditMode
       ? `${BaseUrl}/booking/${bookingId}`
       : `${BaseUrl}/booking/`;
@@ -109,28 +121,33 @@ function BookingDetails() {
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)
+        navigate("/mybooking", { replace: true });
+      })
       .catch((err) => console.error(err.message));
 
-    navigate("/mybooking", { replace: true });
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { name, value } = e.target;
     setBookingDetails((prevDetails) => ({
       ...prevDetails,
       [name]: value,
     }));
 
-    if (name === "origin") {
-      setDebouncedOrigin(value);
-    } else if (name === "destination") {
-      setDebouncedDestination(value);
+    if (name === "origin" || name === "destination") {
+      if (name === "origin") {
+        setDebouncedOrigin(value);
+      } else if (name === "destination") {
+        setDebouncedDestination(value);
+      }
     }
   };
 
   return (
     <div className="booking-details-main-container">
+      <ToastContainer />
       {/* Left container for Car and Booking Details */}
       <div className="booking-details-left-container">
         <h4 className="heading-of-mybooking">
@@ -240,16 +257,20 @@ function BookingDetails() {
           </div>
           <div className="booking-info-time">
             Booking Date:{" "}
-            <span className="booking-info-value">{formatDate(bookingDate)}</span>
+            <span className="booking-info-value">
+              {formatDate(bookingDate)}
+            </span>
           </div>
           <div className="booking-info-time">
             Booking Time:{" "}
-            <span className="booking-info-value">{formatTime(bookingTime)}</span>
+            <span className="booking-info-value">
+              {formatTime(bookingTime)}
+            </span>
           </div>
         </div>
         <hr />
         <button
-          className="cancel-btn"
+          className="booking-cancel-btn"
           onClick={() => navigate("/available-cars")}
         >
           CANCEL
@@ -262,15 +283,15 @@ function BookingDetails() {
           <h5 className="payment-heading">Payment Details</h5>
           <div className="price-per-Km">
             <div>Price per km</div>
-            <div className="value-of-price">{bookingDetails.perKm}/Km</div>
+            <div className="value-of-price">{bookingDetails.pricePerKm}/Km</div>
           </div>
           <div className="price-per-Km">
             <div>Sub total</div>
             <div className="value-of-price-font">{subtotal} RS</div>
           </div>
-          <div className="price-per-Km-tax">
+          <div className="price-per-Km">
             <div className="tax-value">Tax Charges</div>
-            <div className="value-of-price">{tax} RS</div>
+            <div className="tex-value-of-price">{tax} RS</div>
           </div>
         </div>
         <hr />
@@ -279,7 +300,7 @@ function BookingDetails() {
             <div>Total</div>
             <div className="value-of-price-font-total">{total} RS</div>
           </div>
-          <button className="proceed-btn" onClick={handleBookingSubmit}>
+          <button className="booking-proceed-btn" onClick={handleBookingSubmit}>
             {isEditMode ? "Update Booking" : "Proceed"}
           </button>
         </div>

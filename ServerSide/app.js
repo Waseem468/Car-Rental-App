@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("./src/config/db");
-const fileUpload=require("express-fileupload")
+const fileUpload = require("express-fileupload");
 const connectDB = require("./src/config/db");
 
 connectDB();
@@ -14,14 +14,22 @@ const OrderRouter = require("./src/routes/bookingRoutes");
 const app = express();
 
 // Middleware
-app.use(fileUpload({
-    useTempFiles: true, 
-    tempFileDir: '/tmp/',
-}));
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-// app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Allow domain
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow common HTTP methods
+    credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+    allowedHeaders: "Content-Type, Authorization", // Allow specific headers
+  })
+);
 
 // Routes
 app.use("/car", CarRouter);
@@ -32,5 +40,5 @@ app.use("/booking", OrderRouter);
 // Server setup
 const PORT = 5000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

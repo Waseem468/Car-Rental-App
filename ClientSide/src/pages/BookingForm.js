@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "../styles/BookingForm.css";
 import Home from "./Home";
 import { CarContextData } from "../context/CarContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { validateLocationsInIndia } from "../utils/bookingValidation";
+import { isDateValid } from "../utils/bookingValidation"; // Import the validation function
 
 const BookingForm = () => {
   const tokenUser = JSON.parse(localStorage.getItem("User-token"));
@@ -16,7 +20,6 @@ const BookingForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Prefill the form with headerData if available
     if (headerData) {
       setInputData({
         origin: headerData.origin || "",
@@ -32,7 +35,7 @@ const BookingForm = () => {
     setInputData({ ...inputData, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     const { origin, destination, startDate, endDate } = inputData;
 
@@ -41,9 +44,23 @@ const BookingForm = () => {
       return;
     }
 
-    // Store the current form data into headerData (context)
+    // Validate date fields using the imported function
+    if (!isDateValid(startDate, endDate)) {
+      return;
+    }
+
+    const areLocationsValid = await validateLocationsInIndia(
+      origin,
+      destination
+    );
+
+    if (!areLocationsValid) {
+      return;
+    }
+
+    // If both locations and dates are valid, proceed with setting the headerData
     setHeaderData(inputData);
-    navigate("/available-cars"); // Navigate to the next step
+    navigate("/available-cars");
   };
 
   if (!tokenUser) {
@@ -52,6 +69,7 @@ const BookingForm = () => {
 
   return (
     <div className="booking-form-container">
+      <ToastContainer />
       <div className="booking-quotes">
         <p className="user-text-of-the-home-page">
           You can Unlock the Best Deals <br />

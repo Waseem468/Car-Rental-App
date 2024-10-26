@@ -28,7 +28,7 @@ const MapComponent = ({ originLatLng, destinationLatLng }) => {
     <MapContainer
       center={center}
       zoom={6}
-      style={{ height: "14rem", width: "100%" }}
+      style={{ height: "13rem", width: "100%" }}
     >
       {/* Add a TileLayer (the background map) */}
       <TileLayer
