@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/AdminCarCard.css";
-import { CarContextData } from "../../context/CarContext";
-import { truncate } from "../../utils/truncateWord";
+import "../../custom_styles/AdminCarCard.css";
+import { CarContextData } from "../../context_file/CarContext";
+import { truncate } from "../../clientside_utils/truncateWord";
 
 function AdminCarCard() {
   const adminId = JSON.parse(localStorage.getItem("Admin-Id"));

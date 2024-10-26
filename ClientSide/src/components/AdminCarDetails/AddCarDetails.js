@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { CarContextData } from "../../context/CarContext";
-import "../../styles/AddCarDetails.css";
+import { CarContextData } from "../../context_file/CarContext";
+import "../../custom_styles/AddCarDetails.css";
 
 const AddCarDetails = () => {
   const navigate = useNavigate();

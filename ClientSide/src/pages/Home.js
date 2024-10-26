@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import "../styles/Home.css";
+import "../custom_styles/Home.css";
 import Userlogin from "../components/User/Userlogin";
 import UserRegister from "../components/User/UserRegister";
 import AdminLogin from "../components/Admin/Adminlogin";
 import AdminRegister from "../components/Admin/AdminRegister";
-import { CarContextData } from "../context/CarContext";
+import { CarContextData } from "../context_file/CarContext";
 
 const Home = () => {
   const {

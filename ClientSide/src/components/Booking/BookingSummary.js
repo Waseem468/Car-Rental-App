@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/BookingSummary.css";
-import { CarContextData } from "../../context/CarContext";
+import "../../custom_styles/BookingSummary.css";
+import { CarContextData } from "../../context_file/CarContext";
 
 function BookingSummary() {
   const { headerData } = useContext(CarContextData);

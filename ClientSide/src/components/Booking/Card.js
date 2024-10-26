@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/card.css";
-import { CarContextData } from "../../context/CarContext";
-import { truncate } from "../../utils/truncateWord";
+import "../../custom_styles/card.css";
+import { CarContextData } from "../../context_file/CarContext";
+import { truncate } from "../../clientside_utils/truncateWord";
 const Card = ({ car }) => {
   const { setUserSelectedCar,setIsEditMode } = useContext(CarContextData);
 

@@ -1,5 +1,5 @@
 const Car = require("../models/carModel");
-const cloudinary = require("../utils/cloudinary");
+const cloudinary = require("../backend_utils/cloudinary");
 
 //add car
 const addCar = async (req, res) => {

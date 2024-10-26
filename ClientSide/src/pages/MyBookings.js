@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../../src/styles/MyBookings.css";
+import "../../src/custom_styles/MyBookings.css";
 import { Link } from "react-router-dom";
-import { CarContextData } from "../context/CarContext";
+import { CarContextData } from "../context_file/CarContext";
 import Home from "./Home";
 import MapComponent from "../components/LeafletMap/MapComponent";
-import { getLatLng } from "../utils/bookingValidation";
+import { getLatLng } from "../clientside_utils/bookingValidation";
 
 function MyBookings() {
   const { setEditBookingDetails, BaseUrl, setIsEditMode } =

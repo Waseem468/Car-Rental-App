@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AdminCarCard from "./AdminCarCard";
-import "../../styles/AdminCarDetails.css";
+import "../../custom_styles/AdminCarDetails.css";
 
 const AdminCarDetails = () => {
   const adminName = localStorage.getItem("Admin-name");
