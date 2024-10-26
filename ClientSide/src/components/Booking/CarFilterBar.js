@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/CarFilterBar.css';
+import '../../custom_styles/CarFilterBar.css';
 
 function CarFilterBar() {
   return (

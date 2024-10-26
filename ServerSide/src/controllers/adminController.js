@@ -1,5 +1,5 @@
 const { hashPassword, comparePassword } = require('../helpers/authHelper');
-const { generateToken } = require('../utils/genrateToken');
+const { generateToken } = require('../backend_utils/genrateToken');
 const Admin = require('../models/adminModel');
 
 // Register admin

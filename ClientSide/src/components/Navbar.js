@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/Navbar.css";
+import "../custom_styles/Navbar.css";
 import logo from "../images/logo1.webp";
 import { Link, useNavigate } from "react-router-dom";
 

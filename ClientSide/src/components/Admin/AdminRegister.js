@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Register from "../Register";
-import { CarContextData } from "../../context/CarContext";
+import { CarContextData } from "../../context_file/CarContext";
 
 const AdminRegister = () => {
   const { setIsAdmin, setView, setShowAdminRegister, BaseUrl } =

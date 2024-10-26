@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../src/styles/BookingDetails.css";
+import "../../src/custom_styles/BookingDetails.css";
 import { v4 as uuidv4 } from "uuid";
-import { CarContextData } from "../context/CarContext";
-import { getLatLng, validateLocationsInIndia } from "../utils/bookingValidation";
-import { calculateDistance } from "../utils/calculateDistance";
+import { CarContextData } from "../context_file/CarContext";
+import { getLatLng, validateLocationsInIndia } from "../clientside_utils/bookingValidation";
+import { calculateDistance } from "../clientside_utils/calculateDistance";
 import MapComponent from "../components/LeafletMap/MapComponent";
-import { formatDate, formatTime } from "../utils/formatDateTime";
+import { formatDate, formatTime } from "../clientside_utils/formatDateTime";
 import { ToastContainer } from "react-toastify";
 
 function BookingDetails() {

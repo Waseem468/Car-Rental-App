@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import BookingSummary from "../components/Booking/BookingSummary";
 import CarFilterBar from "../components/Booking/CarFilterBar";
 import Card from "../components/Booking/Card";
-import "../styles/AvailableCars.css";
-import { CarContextData } from "../context/CarContext";
+import "../custom_styles/AvailableCars.css";
+import { CarContextData } from "../context_file/CarContext";
 
 const AvailableCars = () => {
   const [carData, setCarData] = useState([]);

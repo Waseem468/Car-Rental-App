@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/BookingForm.css";
+import "../custom_styles/BookingForm.css";
 import Home from "./Home";
-import { CarContextData } from "../context/CarContext";
+import { CarContextData } from "../context_file/CarContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { validateLocationsInIndia } from "../utils/bookingValidation";
-import { isDateValid } from "../utils/bookingValidation"; // Import the validation function
+import { validateLocationsInIndia } from "../clientside_utils/bookingValidation";
+import { isDateValid } from "../clientside_utils/bookingValidation"; // Import the validation function
 
 const BookingForm = () => {
   const tokenUser = JSON.parse(localStorage.getItem("User-token"));

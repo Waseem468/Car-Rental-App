@@ -1,6 +1,5 @@
 import AppRouter from "./AppRouter";
 import "./App.css";
-import CarContext from "./context/CarContext";
 
 function App() {
   return (
