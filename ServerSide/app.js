@@ -22,15 +22,27 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Allow both local and production frontend origins
+const allowedOrigins = [
+  "http://localhost:3000", // Local development
+  "https://car-rental-app-frontend-q9sq.onrender.com", // Deployed frontend on Render
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow domain
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow common HTTP methods
     credentials: true, // Enable credentials (cookies, authorization headers, etc.)
     allowedHeaders: "Content-Type, Authorization", // Allow specific headers
   })
 );
-
 // Routes
 app.use("/car", CarRouter);
 app.use("/user", UserRouter);
