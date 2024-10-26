@@ -98,11 +98,12 @@ const AddCarDetails = () => {
                   onChange={handleChange}
                 >
                   <option value="">Select</option>
-                  <option value="UV">UV</option>
-                  <option value="XUV">XUV</option>
-                  <option value="SUV">SUV</option>
-                  <option value="MUV">MUV</option>
                   <option value="Hatchback">Hatchback</option>
+                  <option value="Sedan">Sedan</option>
+                  <option value="SUV">SUV</option>
+                  <option value="MPV">MPV</option>
+                  <option value="Crossover">Crossover</option>
+                  <option value="Convertible">Convertible</option>
                 </select>
               </div>
               <div className="field-group">
@@ -113,9 +114,48 @@ const AddCarDetails = () => {
                   onChange={handleChange}
                 >
                   <option value="">Select</option>
-                  <option value="I20">I20</option>
-                  <option value="Sports10">Sports10</option>
-                  <option value="Grand I20">Grand I20</option>
+                  {formData.carType === "Hatchback" && (
+                    <>
+                      <option value="Maruti Suzuki Swift">Maruti Suzuki Swift</option>
+                      <option value="Hyundai i20">Hyundai i20</option>
+                      <option value="Tata Altroz">Tata Altroz</option>
+                    </>
+                  )}
+                  {formData.carType === "Sedan" && (
+                    <>
+                      <option value="Honda City">Honda City</option>
+                      <option value="Hyundai Verna">Hyundai Verna</option>
+                      <option value="Maruti Suzuki Ciaz">Maruti Suzuki Ciaz</option>
+                    </>
+                  )}
+                  {formData.carType === "SUV" && (
+                    <>
+                      <option value="Hyundai Creta">Hyundai Creta</option>
+                      <option value="Tata Harrier">Tata Harrier</option>
+                      <option value="Toyota Fortuner">Toyota Fortuner</option>
+                    </>
+                  )}
+                  {formData.carType === "MPV" && (
+                    <>
+                      <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+                      <option value="Maruti Suzuki Ertiga">Maruti Suzuki Ertiga</option>
+                      <option value="Mahindra Marazzo">Mahindra Marazzo</option>
+                    </>
+                  )}
+                  {formData.carType === "Crossover" && (
+                    <>
+                      <option value="Tata Nexon">Tata Nexon</option>
+                      <option value="Renault Kiger">Renault Kiger</option>
+                      <option value="Hyundai Venue">Hyundai Venue</option>
+                    </>
+                  )}
+                  {formData.carType === "Convertible" && (
+                    <>
+                      <option value="Mini Cooper Convertible">Mini Cooper Convertible</option>
+                      <option value="BMW Z4">BMW Z4</option>
+                      <option value="Porsche 718 Boxster">Porsche 718 Boxster</option>
+                    </>
+                  )}
                 </select>
               </div>
             </div>

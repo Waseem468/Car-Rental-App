@@ -1,90 +1,67 @@
-.main-container {
-    background-color: white;
-    color: black;
-}
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width:100%;
-    height: 100%;
-    padding-top: 20px;
-    padding: 10px;
-}
-.main-container {
-    margin-top: 20px;
-    padding: 0px;
-    width: 100%;
-    height: 250px;
-    border-radius: 20px;
-    border: 2px solid black;
-    overflow: hidden;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-.car-image{
-    height: 155px;
-    width: 100%;
+.car-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.capacity{
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 3px;
+.car-card:hover {
+  transform: scale(1.05);
 }
 
-.innova{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3px;
-    margin-left: 3px;
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.car-image-container {
+  text-align: center;
 }
 
-.color-of-price{
-    color: green;
-    font-weight: bold;
-}
-.price-per-km{
-    width:100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 7px;
-    border: 1px solid #707070;
-    
-    
-}
-.left-of-the-card{
-    height: 50px;
-    width: 50%;
-    background-color: #FFFFFF;
-    text-align: center;
-    padding-top: 17px;
-}
-.right-of-card{
-    height: 50px;
-    width: 50%;
-    background-color: blue;
-    color: white;
-    padding-top: 17px;
-    text-align: center; 
-    align-items: center; 
+.car-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
-#display-message{
-    text-align: center;
-    border: 2px solid red;
-    width: 35%;
-    margin-left: 35%;
-    font-weight: bold;
-    border-radius: 5px;
-    color: red;
-    height: 50px;
+.car-capacity {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 1rem 0;
 }
-.error-button{
-    border: 2px solid red;
-    margin-left:20px;
-    background-color: red;
-    padding: 1px;
-    color: aliceblue;
+
+.car-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.car-price {
+  font-size: 1.5rem;
+  color: #30aa5b;
+  font-weight: bold;
+}
+
+.car-availability {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-dismiss-btn {
+  background-color: #f8d7da;
+  border: none;
+  color: #721c24;
+  cursor: pointer;
 }

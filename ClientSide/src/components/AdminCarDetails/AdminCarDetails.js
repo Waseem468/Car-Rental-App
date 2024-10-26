@@ -4,23 +4,19 @@ import AdminCarCard from "./AdminCarCard";
 import "../../styles/AdminCarDetails.css";
 
 const AdminCarDetails = () => {
-  const adminName = JSON.parse(localStorage.getItem("Admin-name"));
+  const adminName = localStorage.getItem("Admin-name");
 
   return (
     <div className="admin-container">
-      <div className="admin-content">
-        <div className="admin-greeting">
-          <h1>Hello, {adminName}!</h1>
-        </div>
-        <div className="admin-header">
-          <div className="admin-header-title">Cars</div>
-          <Link to={"/addcar"}>
-            <button className="admin-add-car-btn">Add Cars</button>
-          </Link>
-        </div>
-        <div className="admin-cars-list">
-          <AdminCarCard />
-        </div>
+      <h1 className="admin-greeting">Hello, {JSON.parse(adminName)}!</h1>
+      <div className="admin-header">
+        <h2>Cars</h2>
+        <Link to="/addcar" className="admin-add-car-link">
+          <button className="admin-add-car-btn">Add Car</button>
+        </Link>
+      </div>
+      <div className="admin-cars-list">
+        <AdminCarCard />
       </div>
     </div>
   );

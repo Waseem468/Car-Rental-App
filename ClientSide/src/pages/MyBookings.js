@@ -93,27 +93,25 @@ function MyBookings() {
               <img src={booking.image} alt="Car" className="car-image" />
             </div>
             <div className="booking-column-details">
-              <div className="car-details">
                 <h4>{booking.carName}</h4>
                 <h5>{booking.carNumber}</h5>
                 <h6>Car Details: {booking.details}</h6>
-              </div>
             </div>
             <div className="booking-column-info">
               <div className="booking-info-div">
-                <span className="booking-heading">Origin</span>:{" "}
+                <span className="booking-heading">Origin</span>{" "}
                 {booking.origin}
               </div>
               <div className="booking-info-div">
-                <span className="booking-heading">Destination</span>:{" "}
+                <span className="booking-heading">Destination</span>{" "}
                 {booking.destination}
               </div>
               <div className="booking-info-div">
-                <span className="booking-heading">Start Date</span>:{" "}
+                <span className="booking-heading">Start Date</span>{" "}
                 {booking.startDate}
               </div>
               <div className="booking-info-div">
-                <span className="booking-heading">End Date</span>:{" "}
+                <span className="booking-heading">End Date</span>{" "}
                 {booking.endDate}
               </div>
             </div>
