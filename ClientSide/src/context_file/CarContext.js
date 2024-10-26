@@ -15,8 +15,8 @@ export default function CarContext({ children }) {
   const [userSelectedCar,setUserSelectedCar]=useState({});
   const [isEditMode,setIsEditMode]=useState(false)
 
-  const BaseUrl="http://localhost:5000"
-  // const BaseUrl="https://car-rental-app-1-5tgr.onrender.com"
+  // const BaseUrl="http://localhost:5000" //local host url
+  const BaseUrl="https://car-rental-app-backend-m9q4.onrender.com"
 
   return (
     <CarContextData.Provider
